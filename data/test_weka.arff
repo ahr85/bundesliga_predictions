@@ -1,0 +1,635 @@
+@relation R_data_frame
+
+@attribute team_a {'1. FC Kaiserslautern','1. FC Koln','1. FC Nurnberg','1. FSV Mainz 05','1860 Munchen','1899 Hoffenheim','Alemannia Aachen','Bayer 04 Leverkusen','Borussia Dortmund','Borussia Monchengladbach','DSC Arminia Bielefeld','Eintracht Frankfurt','FC Augsburg','FC Bayern Munchen','FC Energie Cottbus','FC Schalke 04','FC St. Pauli','Hamburger SV','Hannover 96','Hansa Rostock','Hertha BSC Berlin','Karlsruher SC','MSV Duisburg','SC Freiburg','SpVgg Unterhaching','SV Werder Bremen','VfB Stuttgart','VfL Bochum','VfL Wolfsburg'}
+@attribute team_b {'1. FC Kaiserslautern','1. FC Koln','1. FC Nurnberg','1. FSV Mainz 05','1860 Munchen','1899 Hoffenheim','Alemannia Aachen','Bayer 04 Leverkusen','Borussia Dortmund','Borussia Monchengladbach','DSC Arminia Bielefeld','Eintracht Frankfurt','FC Augsburg','FC Bayern Munchen','FC Energie Cottbus','FC Schalke 04','FC St. Pauli','Hamburger SV','Hannover 96','Hansa Rostock','Hertha BSC Berlin','Karlsruher SC','MSV Duisburg','SC Freiburg','SpVgg Unterhaching','SV Werder Bremen','VfB Stuttgart','VfL Bochum','VfL Wolfsburg'}
+@attribute spieltag numeric
+@attribute saison {2000_01,2001_02,2002_03,2003_04,2004_05,2005_06,2006_07,2007_08,2008_09,2009_10,2010_11,2011_12}
+@attribute saison_weight numeric
+@attribute heim_gast {Heim,Gast}
+@attribute tore_a numeric
+@attribute tore_b numeric
+@attribute sun_a {S,U,N}
+@attribute sun_b {N,U,S}
+@attribute place_a numeric
+@attribute points_a numeric
+@attribute place_b numeric
+@attribute points_b numeric
+@attribute wins_pro_a numeric
+@attribute points_pro_a numeric
+@attribute wins_pro_b numeric
+@attribute points_pro_b numeric
+@attribute hg_01 numeric
+
+@data
+'Borussia Dortmund','Hamburger SV',1,2011_12,12,Heim,3,1,S,N,1,81,15,36,0.735294,0.794118,0.235294,0.352941,1
+'SV Werder Bremen','1. FC Kaiserslautern',1,2011_12,12,Heim,2,0,S,N,9,42,18,23,0.323529,0.411765,0.117647,0.22549,1
+'Hannover 96','1899 Hoffenheim',1,2011_12,12,Heim,2,1,S,N,7,48,11,41,0.352941,0.470588,0.294118,0.401961,1
+'VfB Stuttgart','FC Schalke 04',1,2011_12,12,Heim,3,0,S,N,6,53,3,64,0.441176,0.519608,0.588235,0.627451,1
+'1. FC Koln','VfL Wolfsburg',1,2011_12,12,Heim,0,3,N,S,17,30,8,44,0.235294,0.294118,0.382353,0.431373,1
+'FC Augsburg','SC Freiburg',1,2011_12,12,Heim,2,2,U,U,14,38,12,40,0.235294,0.372549,0.294118,0.392157,1
+'Hertha BSC Berlin','1. FC Nurnberg',1,2011_12,12,Heim,0,1,N,S,16,31,10,42,0.205882,0.303922,0.352941,0.411765,1
+'1. FSV Mainz 05','Bayer 04 Leverkusen',1,2011_12,12,Heim,2,0,S,N,13,39,5,54,0.264706,0.382353,0.441176,0.529412,1
+'FC Bayern Munchen','Borussia Monchengladbach',1,2011_12,12,Heim,0,1,N,S,2,73,4,60,0.676471,0.715686,0.5,0.588235,1
+'Hamburger SV','Borussia Dortmund',1,2011_12,12,Gast,1,3,N,S,15,36,1,81,0.235294,0.352941,0.735294,0.794118,2
+'1. FC Kaiserslautern','SV Werder Bremen',1,2011_12,12,Gast,0,2,N,S,18,23,9,42,0.117647,0.22549,0.323529,0.411765,2
+'1899 Hoffenheim','Hannover 96',1,2011_12,12,Gast,1,2,N,S,11,41,7,48,0.294118,0.401961,0.352941,0.470588,2
+'FC Schalke 04','VfB Stuttgart',1,2011_12,12,Gast,0,3,N,S,3,64,6,53,0.588235,0.627451,0.441176,0.519608,2
+'VfL Wolfsburg','1. FC Koln',1,2011_12,12,Gast,3,0,S,N,8,44,17,30,0.382353,0.431373,0.235294,0.294118,2
+'SC Freiburg','FC Augsburg',1,2011_12,12,Gast,2,2,U,U,12,40,14,38,0.294118,0.392157,0.235294,0.372549,2
+'1. FC Nurnberg','Hertha BSC Berlin',1,2011_12,12,Gast,1,0,S,N,10,42,16,31,0.352941,0.411765,0.205882,0.303922,2
+'Bayer 04 Leverkusen','1. FSV Mainz 05',1,2011_12,12,Gast,0,2,N,S,5,54,13,39,0.441176,0.529412,0.264706,0.382353,2
+'Borussia Monchengladbach','FC Bayern Munchen',1,2011_12,12,Gast,1,0,S,N,4,60,2,73,0.5,0.588235,0.676471,0.715686,2
+'FC Schalke 04','1. FC Koln',2,2011_12,12,Heim,5,1,S,N,3,64,17,30,0.588235,0.627451,0.235294,0.294118,1
+'Hamburger SV','Hertha BSC Berlin',2,2011_12,12,Heim,2,2,U,U,15,36,16,31,0.235294,0.352941,0.205882,0.303922,1
+'1. FC Nurnberg','Hannover 96',2,2011_12,12,Heim,1,2,N,S,10,42,7,48,0.352941,0.411765,0.352941,0.470588,1
+'SC Freiburg','1. FSV Mainz 05',2,2011_12,12,Heim,1,2,N,S,12,40,13,39,0.294118,0.392157,0.264706,0.382353,1
+'1899 Hoffenheim','Borussia Dortmund',2,2011_12,12,Heim,1,0,S,N,11,41,1,81,0.294118,0.401961,0.735294,0.794118,1
+'VfL Wolfsburg','FC Bayern Munchen',2,2011_12,12,Heim,0,1,N,S,8,44,2,73,0.382353,0.431373,0.676471,0.715686,1
+'Borussia Monchengladbach','VfB Stuttgart',2,2011_12,12,Heim,1,1,U,U,4,60,6,53,0.5,0.588235,0.441176,0.519608,1
+'1. FC Kaiserslautern','FC Augsburg',2,2011_12,12,Heim,1,1,U,U,18,23,14,38,0.117647,0.22549,0.235294,0.372549,1
+'Bayer 04 Leverkusen','SV Werder Bremen',2,2011_12,12,Heim,1,0,S,N,5,54,9,42,0.441176,0.529412,0.323529,0.411765,1
+'1. FC Koln','FC Schalke 04',2,2011_12,12,Gast,1,5,N,S,17,30,3,64,0.235294,0.294118,0.588235,0.627451,2
+'Hertha BSC Berlin','Hamburger SV',2,2011_12,12,Gast,2,2,U,U,16,31,15,36,0.205882,0.303922,0.235294,0.352941,2
+'Hannover 96','1. FC Nurnberg',2,2011_12,12,Gast,2,1,S,N,7,48,10,42,0.352941,0.470588,0.352941,0.411765,2
+'1. FSV Mainz 05','SC Freiburg',2,2011_12,12,Gast,2,1,S,N,13,39,12,40,0.264706,0.382353,0.294118,0.392157,2
+'Borussia Dortmund','1899 Hoffenheim',2,2011_12,12,Gast,0,1,N,S,1,81,11,41,0.735294,0.794118,0.294118,0.401961,2
+'FC Bayern Munchen','VfL Wolfsburg',2,2011_12,12,Gast,1,0,S,N,2,73,8,44,0.676471,0.715686,0.382353,0.431373,2
+'VfB Stuttgart','Borussia Monchengladbach',2,2011_12,12,Gast,1,1,U,U,6,53,4,60,0.441176,0.519608,0.5,0.588235,2
+'FC Augsburg','1. FC Kaiserslautern',2,2011_12,12,Gast,1,1,U,U,14,38,18,23,0.235294,0.372549,0.117647,0.22549,2
+'SV Werder Bremen','Bayer 04 Leverkusen',2,2011_12,12,Gast,0,1,N,S,9,42,5,54,0.323529,0.411765,0.441176,0.529412,2
+'Borussia Monchengladbach','VfL Wolfsburg',3,2011_12,12,Heim,4,1,S,N,4,60,8,44,0.5,0.588235,0.382353,0.431373,1
+'Borussia Dortmund','1. FC Nurnberg',3,2011_12,12,Heim,2,0,S,N,1,81,10,42,0.735294,0.794118,0.352941,0.411765,1
+'FC Bayern Munchen','Hamburger SV',3,2011_12,12,Heim,5,0,S,N,2,73,15,36,0.676471,0.715686,0.235294,0.352941,1
+'SV Werder Bremen','SC Freiburg',3,2011_12,12,Heim,5,3,S,N,9,42,12,40,0.323529,0.411765,0.294118,0.392157,1
+'VfB Stuttgart','Bayer 04 Leverkusen',3,2011_12,12,Heim,0,1,N,S,6,53,5,54,0.441176,0.519608,0.441176,0.529412,1
+'FC Augsburg','1899 Hoffenheim',3,2011_12,12,Heim,0,2,N,S,14,38,11,41,0.235294,0.372549,0.294118,0.401961,1
+'1. FC Koln','1. FC Kaiserslautern',3,2011_12,12,Heim,1,1,U,U,17,30,18,23,0.235294,0.294118,0.117647,0.22549,1
+'1. FSV Mainz 05','FC Schalke 04',3,2011_12,12,Heim,2,4,N,S,13,39,3,64,0.264706,0.382353,0.588235,0.627451,1
+'Hannover 96','Hertha BSC Berlin',3,2011_12,12,Heim,1,1,U,U,7,48,16,31,0.352941,0.470588,0.205882,0.303922,1
+'VfL Wolfsburg','Borussia Monchengladbach',3,2011_12,12,Gast,1,4,N,S,8,44,4,60,0.382353,0.431373,0.5,0.588235,2
+'1. FC Nurnberg','Borussia Dortmund',3,2011_12,12,Gast,0,2,N,S,10,42,1,81,0.352941,0.411765,0.735294,0.794118,2
+'Hamburger SV','FC Bayern Munchen',3,2011_12,12,Gast,0,5,N,S,15,36,2,73,0.235294,0.352941,0.676471,0.715686,2
+'SC Freiburg','SV Werder Bremen',3,2011_12,12,Gast,3,5,N,S,12,40,9,42,0.294118,0.392157,0.323529,0.411765,2
+'Bayer 04 Leverkusen','VfB Stuttgart',3,2011_12,12,Gast,1,0,S,N,5,54,6,53,0.441176,0.529412,0.441176,0.519608,2
+'1899 Hoffenheim','FC Augsburg',3,2011_12,12,Gast,2,0,S,N,11,41,14,38,0.294118,0.401961,0.235294,0.372549,2
+'1. FC Kaiserslautern','1. FC Koln',3,2011_12,12,Gast,1,1,U,U,18,23,17,30,0.117647,0.22549,0.235294,0.294118,2
+'FC Schalke 04','1. FSV Mainz 05',3,2011_12,12,Gast,4,2,S,N,3,64,13,39,0.588235,0.627451,0.264706,0.382353,2
+'Hertha BSC Berlin','Hannover 96',3,2011_12,12,Gast,1,1,U,U,16,31,7,48,0.205882,0.303922,0.352941,0.470588,2
+'Hertha BSC Berlin','VfB Stuttgart',4,2011_12,12,Heim,1,0,S,N,16,31,6,53,0.205882,0.303922,0.441176,0.519608,1
+'Hamburger SV','1. FC Koln',4,2011_12,12,Heim,3,4,N,S,15,36,17,30,0.235294,0.352941,0.235294,0.294118,1
+'1. FC Nurnberg','FC Augsburg',4,2011_12,12,Heim,1,0,S,N,10,42,14,38,0.352941,0.411765,0.235294,0.372549,1
+'SC Freiburg','VfL Wolfsburg',4,2011_12,12,Heim,3,0,S,N,12,40,8,44,0.294118,0.392157,0.382353,0.431373,1
+'1. FC Kaiserslautern','FC Bayern Munchen',4,2011_12,12,Heim,0,3,N,S,18,23,2,73,0.117647,0.22549,0.676471,0.715686,1
+'1899 Hoffenheim','SV Werder Bremen',4,2011_12,12,Heim,1,2,N,S,11,41,9,42,0.294118,0.401961,0.323529,0.411765,1
+'Bayer 04 Leverkusen','Borussia Dortmund',4,2011_12,12,Heim,0,0,U,U,5,54,1,81,0.441176,0.529412,0.735294,0.794118,1
+'Hannover 96','1. FSV Mainz 05',4,2011_12,12,Heim,1,1,U,U,7,48,13,39,0.352941,0.470588,0.264706,0.382353,1
+'FC Schalke 04','Borussia Monchengladbach',4,2011_12,12,Heim,1,0,S,N,3,64,4,60,0.588235,0.627451,0.5,0.588235,1
+'VfB Stuttgart','Hertha BSC Berlin',4,2011_12,12,Gast,0,1,N,S,6,53,16,31,0.441176,0.519608,0.205882,0.303922,2
+'1. FC Koln','Hamburger SV',4,2011_12,12,Gast,4,3,S,N,17,30,15,36,0.235294,0.294118,0.235294,0.352941,2
+'FC Augsburg','1. FC Nurnberg',4,2011_12,12,Gast,0,1,N,S,14,38,10,42,0.235294,0.372549,0.352941,0.411765,2
+'VfL Wolfsburg','SC Freiburg',4,2011_12,12,Gast,0,3,N,S,8,44,12,40,0.382353,0.431373,0.294118,0.392157,2
+'FC Bayern Munchen','1. FC Kaiserslautern',4,2011_12,12,Gast,3,0,S,N,2,73,18,23,0.676471,0.715686,0.117647,0.22549,2
+'SV Werder Bremen','1899 Hoffenheim',4,2011_12,12,Gast,2,1,S,N,9,42,11,41,0.323529,0.411765,0.294118,0.401961,2
+'Borussia Dortmund','Bayer 04 Leverkusen',4,2011_12,12,Gast,0,0,U,U,1,81,5,54,0.735294,0.794118,0.441176,0.529412,2
+'1. FSV Mainz 05','Hannover 96',4,2011_12,12,Gast,1,1,U,U,13,39,7,48,0.264706,0.382353,0.352941,0.470588,2
+'Borussia Monchengladbach','FC Schalke 04',4,2011_12,12,Gast,0,1,N,S,4,60,3,64,0.5,0.588235,0.588235,0.627451,2
+'FC Augsburg','Bayer 04 Leverkusen',5,2011_12,12,Heim,1,4,N,S,14,38,5,54,0.235294,0.372549,0.441176,0.529412,1
+'Borussia Dortmund','Hertha BSC Berlin',5,2011_12,12,Heim,1,2,N,S,1,81,16,31,0.735294,0.794118,0.205882,0.303922,1
+'FC Bayern Munchen','SC Freiburg',5,2011_12,12,Heim,7,0,S,N,2,73,12,40,0.676471,0.715686,0.294118,0.392157,1
+'1. FSV Mainz 05','1899 Hoffenheim',5,2011_12,12,Heim,0,4,N,S,13,39,11,41,0.264706,0.382353,0.294118,0.401961,1
+'VfB Stuttgart','Hannover 96',5,2011_12,12,Heim,3,0,S,N,6,53,7,48,0.441176,0.519608,0.352941,0.470588,1
+'Borussia Monchengladbach','1. FC Kaiserslautern',5,2011_12,12,Heim,1,0,S,N,4,60,18,23,0.5,0.588235,0.117647,0.22549,1
+'SV Werder Bremen','Hamburger SV',5,2011_12,12,Heim,2,0,S,N,9,42,15,36,0.323529,0.411765,0.235294,0.352941,1
+'1. FC Koln','1. FC Nurnberg',5,2011_12,12,Heim,1,2,N,S,17,30,10,42,0.235294,0.294118,0.352941,0.411765,1
+'VfL Wolfsburg','FC Schalke 04',5,2011_12,12,Heim,2,1,S,N,8,44,3,64,0.382353,0.431373,0.588235,0.627451,1
+'Bayer 04 Leverkusen','FC Augsburg',5,2011_12,12,Gast,4,1,S,N,5,54,14,38,0.441176,0.529412,0.235294,0.372549,2
+'Hertha BSC Berlin','Borussia Dortmund',5,2011_12,12,Gast,2,1,S,N,16,31,1,81,0.205882,0.303922,0.735294,0.794118,2
+'SC Freiburg','FC Bayern Munchen',5,2011_12,12,Gast,0,7,N,S,12,40,2,73,0.294118,0.392157,0.676471,0.715686,2
+'1899 Hoffenheim','1. FSV Mainz 05',5,2011_12,12,Gast,4,0,S,N,11,41,13,39,0.294118,0.401961,0.264706,0.382353,2
+'Hannover 96','VfB Stuttgart',5,2011_12,12,Gast,0,3,N,S,7,48,6,53,0.352941,0.470588,0.441176,0.519608,2
+'1. FC Kaiserslautern','Borussia Monchengladbach',5,2011_12,12,Gast,0,1,N,S,18,23,4,60,0.117647,0.22549,0.5,0.588235,2
+'Hamburger SV','SV Werder Bremen',5,2011_12,12,Gast,0,2,N,S,15,36,9,42,0.235294,0.352941,0.323529,0.411765,2
+'1. FC Nurnberg','1. FC Koln',5,2011_12,12,Gast,2,1,S,N,10,42,17,30,0.352941,0.411765,0.235294,0.294118,2
+'FC Schalke 04','VfL Wolfsburg',5,2011_12,12,Gast,1,2,N,S,3,64,8,44,0.588235,0.627451,0.382353,0.431373,2
+'SC Freiburg','VfB Stuttgart',6,2011_12,12,Heim,1,2,N,S,12,40,6,53,0.294118,0.392157,0.441176,0.519608,1
+'Bayer 04 Leverkusen','1. FC Koln',6,2011_12,12,Heim,1,4,N,S,5,54,17,30,0.441176,0.529412,0.235294,0.294118,1
+'Hamburger SV','Borussia Monchengladbach',6,2011_12,12,Heim,0,1,N,S,15,36,4,60,0.235294,0.352941,0.5,0.588235,1
+'1. FC Nurnberg','SV Werder Bremen',6,2011_12,12,Heim,1,1,U,U,10,42,9,42,0.352941,0.411765,0.323529,0.411765,1
+'1899 Hoffenheim','VfL Wolfsburg',6,2011_12,12,Heim,3,1,S,N,11,41,8,44,0.294118,0.401961,0.382353,0.431373,1
+'Hertha BSC Berlin','FC Augsburg',6,2011_12,12,Heim,2,2,U,U,16,31,14,38,0.205882,0.303922,0.235294,0.372549,1
+'1. FC Kaiserslautern','1. FSV Mainz 05',6,2011_12,12,Heim,3,1,S,N,18,23,13,39,0.117647,0.22549,0.264706,0.382353,1
+'Hannover 96','Borussia Dortmund',6,2011_12,12,Heim,2,1,S,N,7,48,1,81,0.352941,0.470588,0.735294,0.794118,1
+'FC Schalke 04','FC Bayern Munchen',6,2011_12,12,Heim,0,2,N,S,3,64,2,73,0.588235,0.627451,0.676471,0.715686,1
+'VfB Stuttgart','SC Freiburg',6,2011_12,12,Gast,2,1,S,N,6,53,12,40,0.441176,0.519608,0.294118,0.392157,2
+'1. FC Koln','Bayer 04 Leverkusen',6,2011_12,12,Gast,4,1,S,N,17,30,5,54,0.235294,0.294118,0.441176,0.529412,2
+'Borussia Monchengladbach','Hamburger SV',6,2011_12,12,Gast,1,0,S,N,4,60,15,36,0.5,0.588235,0.235294,0.352941,2
+'SV Werder Bremen','1. FC Nurnberg',6,2011_12,12,Gast,1,1,U,U,9,42,10,42,0.323529,0.411765,0.352941,0.411765,2
+'VfL Wolfsburg','1899 Hoffenheim',6,2011_12,12,Gast,1,3,N,S,8,44,11,41,0.382353,0.431373,0.294118,0.401961,2
+'FC Augsburg','Hertha BSC Berlin',6,2011_12,12,Gast,2,2,U,U,14,38,16,31,0.235294,0.372549,0.205882,0.303922,2
+'1. FSV Mainz 05','1. FC Kaiserslautern',6,2011_12,12,Gast,1,3,N,S,13,39,18,23,0.264706,0.382353,0.117647,0.22549,2
+'Borussia Dortmund','Hannover 96',6,2011_12,12,Gast,1,2,N,S,1,81,7,48,0.735294,0.794118,0.352941,0.470588,2
+'FC Bayern Munchen','FC Schalke 04',6,2011_12,12,Gast,2,0,S,N,2,73,3,64,0.676471,0.715686,0.588235,0.627451,2
+'VfB Stuttgart','Hamburger SV',7,2011_12,12,Heim,1,2,N,S,6,53,15,36,0.441176,0.519608,0.235294,0.352941,1
+'FC Schalke 04','SC Freiburg',7,2011_12,12,Heim,4,2,S,N,3,64,12,40,0.588235,0.627451,0.294118,0.392157,1
+'1. FSV Mainz 05','Borussia Dortmund',7,2011_12,12,Heim,1,2,N,S,13,39,1,81,0.264706,0.382353,0.735294,0.794118,1
+'VfL Wolfsburg','1. FC Kaiserslautern',7,2011_12,12,Heim,1,0,S,N,8,44,18,23,0.382353,0.431373,0.117647,0.22549,1
+'Borussia Monchengladbach','1. FC Nurnberg',7,2011_12,12,Heim,1,0,S,N,4,60,10,42,0.5,0.588235,0.352941,0.411765,1
+'FC Augsburg','Hannover 96',7,2011_12,12,Heim,0,0,U,U,14,38,7,48,0.235294,0.372549,0.352941,0.470588,1
+'FC Bayern Munchen','Bayer 04 Leverkusen',7,2011_12,12,Heim,3,0,S,N,2,73,5,54,0.676471,0.715686,0.441176,0.529412,1
+'1. FC Koln','1899 Hoffenheim',7,2011_12,12,Heim,2,0,S,N,17,30,11,41,0.235294,0.294118,0.294118,0.401961,1
+'SV Werder Bremen','Hertha BSC Berlin',7,2011_12,12,Heim,2,1,S,N,9,42,16,31,0.323529,0.411765,0.205882,0.303922,1
+'Hamburger SV','VfB Stuttgart',7,2011_12,12,Gast,2,1,S,N,15,36,6,53,0.235294,0.352941,0.441176,0.519608,2
+'SC Freiburg','FC Schalke 04',7,2011_12,12,Gast,2,4,N,S,12,40,3,64,0.294118,0.392157,0.588235,0.627451,2
+'Borussia Dortmund','1. FSV Mainz 05',7,2011_12,12,Gast,2,1,S,N,1,81,13,39,0.735294,0.794118,0.264706,0.382353,2
+'1. FC Kaiserslautern','VfL Wolfsburg',7,2011_12,12,Gast,0,1,N,S,18,23,8,44,0.117647,0.22549,0.382353,0.431373,2
+'1. FC Nurnberg','Borussia Monchengladbach',7,2011_12,12,Gast,0,1,N,S,10,42,4,60,0.352941,0.411765,0.5,0.588235,2
+'Hannover 96','FC Augsburg',7,2011_12,12,Gast,0,0,U,U,7,48,14,38,0.352941,0.470588,0.235294,0.372549,2
+'Bayer 04 Leverkusen','FC Bayern Munchen',7,2011_12,12,Gast,0,3,N,S,5,54,2,73,0.441176,0.529412,0.676471,0.715686,2
+'1899 Hoffenheim','1. FC Koln',7,2011_12,12,Gast,0,2,N,S,11,41,17,30,0.294118,0.401961,0.235294,0.294118,2
+'Hertha BSC Berlin','SV Werder Bremen',7,2011_12,12,Gast,1,2,N,S,16,31,9,42,0.205882,0.303922,0.323529,0.411765,2
+'1. FC Kaiserslautern','VfB Stuttgart',8,2011_12,12,Heim,0,2,N,S,18,23,6,53,0.117647,0.22549,0.441176,0.519608,1
+'Borussia Dortmund','FC Augsburg',8,2011_12,12,Heim,4,0,S,N,1,81,14,38,0.735294,0.794118,0.235294,0.372549,1
+'Bayer 04 Leverkusen','VfL Wolfsburg',8,2011_12,12,Heim,3,1,S,N,5,54,8,44,0.441176,0.529412,0.382353,0.431373,1
+'1. FC Nurnberg','1. FSV Mainz 05',8,2011_12,12,Heim,3,3,U,U,10,42,13,39,0.352941,0.411765,0.264706,0.382353,1
+'SC Freiburg','Borussia Monchengladbach',8,2011_12,12,Heim,1,0,S,N,12,40,4,60,0.294118,0.392157,0.5,0.588235,1
+'1899 Hoffenheim','FC Bayern Munchen',8,2011_12,12,Heim,0,0,U,U,11,41,2,73,0.294118,0.401961,0.676471,0.715686,1
+'Hertha BSC Berlin','1. FC Koln',8,2011_12,12,Heim,3,0,S,N,16,31,17,30,0.205882,0.303922,0.235294,0.294118,1
+'Hannover 96','SV Werder Bremen',8,2011_12,12,Heim,3,2,S,N,7,48,9,42,0.352941,0.470588,0.323529,0.411765,1
+'Hamburger SV','FC Schalke 04',8,2011_12,12,Heim,1,2,N,S,15,36,3,64,0.235294,0.352941,0.588235,0.627451,1
+'VfB Stuttgart','1. FC Kaiserslautern',8,2011_12,12,Gast,2,0,S,N,6,53,18,23,0.441176,0.519608,0.117647,0.22549,2
+'FC Augsburg','Borussia Dortmund',8,2011_12,12,Gast,0,4,N,S,14,38,1,81,0.235294,0.372549,0.735294,0.794118,2
+'VfL Wolfsburg','Bayer 04 Leverkusen',8,2011_12,12,Gast,1,3,N,S,8,44,5,54,0.382353,0.431373,0.441176,0.529412,2
+'1. FSV Mainz 05','1. FC Nurnberg',8,2011_12,12,Gast,3,3,U,U,13,39,10,42,0.264706,0.382353,0.352941,0.411765,2
+'Borussia Monchengladbach','SC Freiburg',8,2011_12,12,Gast,0,1,N,S,4,60,12,40,0.5,0.588235,0.294118,0.392157,2
+'FC Bayern Munchen','1899 Hoffenheim',8,2011_12,12,Gast,0,0,U,U,2,73,11,41,0.676471,0.715686,0.294118,0.401961,2
+'1. FC Koln','Hertha BSC Berlin',8,2011_12,12,Gast,0,3,N,S,17,30,16,31,0.235294,0.294118,0.205882,0.303922,2
+'SV Werder Bremen','Hannover 96',8,2011_12,12,Gast,2,3,N,S,9,42,7,48,0.323529,0.411765,0.352941,0.470588,2
+'FC Schalke 04','Hamburger SV',8,2011_12,12,Gast,2,1,S,N,3,64,15,36,0.588235,0.627451,0.235294,0.352941,2
+'SV Werder Bremen','Borussia Dortmund',9,2011_12,12,Heim,0,2,N,S,9,42,1,81,0.323529,0.411765,0.735294,0.794118,1
+'FC Bayern Munchen','Hertha BSC Berlin',9,2011_12,12,Heim,4,0,S,N,2,73,16,31,0.676471,0.715686,0.205882,0.303922,1
+'1. FSV Mainz 05','FC Augsburg',9,2011_12,12,Heim,0,1,N,S,13,39,14,38,0.264706,0.382353,0.235294,0.372549,1
+'VfB Stuttgart','1899 Hoffenheim',9,2011_12,12,Heim,2,0,S,N,6,53,11,41,0.441176,0.519608,0.294118,0.401961,1
+'VfL Wolfsburg','1. FC Nurnberg',9,2011_12,12,Heim,2,1,S,N,8,44,10,42,0.382353,0.431373,0.352941,0.411765,1
+'Borussia Monchengladbach','Bayer 04 Leverkusen',9,2011_12,12,Heim,2,2,U,U,4,60,5,54,0.5,0.588235,0.441176,0.529412,1
+'FC Schalke 04','1. FC Kaiserslautern',9,2011_12,12,Heim,1,2,N,S,3,64,18,23,0.588235,0.627451,0.117647,0.22549,1
+'SC Freiburg','Hamburger SV',9,2011_12,12,Heim,1,2,N,S,12,40,15,36,0.294118,0.392157,0.235294,0.352941,1
+'1. FC Koln','Hannover 96',9,2011_12,12,Heim,2,0,S,N,17,30,7,48,0.235294,0.294118,0.352941,0.470588,1
+'Borussia Dortmund','SV Werder Bremen',9,2011_12,12,Gast,2,0,S,N,1,81,9,42,0.735294,0.794118,0.323529,0.411765,2
+'Hertha BSC Berlin','FC Bayern Munchen',9,2011_12,12,Gast,0,4,N,S,16,31,2,73,0.205882,0.303922,0.676471,0.715686,2
+'FC Augsburg','1. FSV Mainz 05',9,2011_12,12,Gast,1,0,S,N,14,38,13,39,0.235294,0.372549,0.264706,0.382353,2
+'1899 Hoffenheim','VfB Stuttgart',9,2011_12,12,Gast,0,2,N,S,11,41,6,53,0.294118,0.401961,0.441176,0.519608,2
+'1. FC Nurnberg','VfL Wolfsburg',9,2011_12,12,Gast,1,2,N,S,10,42,8,44,0.352941,0.411765,0.382353,0.431373,2
+'Bayer 04 Leverkusen','Borussia Monchengladbach',9,2011_12,12,Gast,2,2,U,U,5,54,4,60,0.441176,0.529412,0.5,0.588235,2
+'1. FC Kaiserslautern','FC Schalke 04',9,2011_12,12,Gast,2,1,S,N,18,23,3,64,0.117647,0.22549,0.588235,0.627451,2
+'Hamburger SV','SC Freiburg',9,2011_12,12,Gast,2,1,S,N,15,36,12,40,0.235294,0.352941,0.294118,0.392157,2
+'Hannover 96','1. FC Koln',9,2011_12,12,Gast,0,2,N,S,7,48,17,30,0.352941,0.470588,0.235294,0.294118,2
+'FC Augsburg','SV Werder Bremen',10,2011_12,12,Heim,1,1,U,U,14,38,9,42,0.235294,0.372549,0.323529,0.411765,1
+'Borussia Dortmund','1. FC Koln',10,2011_12,12,Heim,5,0,S,N,1,81,17,30,0.735294,0.794118,0.235294,0.294118,1
+'1. FC Nurnberg','VfB Stuttgart',10,2011_12,12,Heim,2,2,U,U,10,42,6,53,0.352941,0.411765,0.441176,0.519608,1
+'1. FC Kaiserslautern','SC Freiburg',10,2011_12,12,Heim,1,0,S,N,18,23,12,40,0.117647,0.22549,0.294118,0.392157,1
+'1899 Hoffenheim','Borussia Monchengladbach',10,2011_12,12,Heim,1,0,S,N,11,41,4,60,0.294118,0.401961,0.5,0.588235,1
+'Hertha BSC Berlin','1. FSV Mainz 05',10,2011_12,12,Heim,0,0,U,U,16,31,13,39,0.205882,0.303922,0.264706,0.382353,1
+'Hamburger SV','VfL Wolfsburg',10,2011_12,12,Heim,1,1,U,U,15,36,8,44,0.235294,0.352941,0.382353,0.431373,1
+'Bayer 04 Leverkusen','FC Schalke 04',10,2011_12,12,Heim,0,1,N,S,5,54,3,64,0.441176,0.529412,0.588235,0.627451,1
+'Hannover 96','FC Bayern Munchen',10,2011_12,12,Heim,2,1,S,N,7,48,2,73,0.352941,0.470588,0.676471,0.715686,1
+'SV Werder Bremen','FC Augsburg',10,2011_12,12,Gast,1,1,U,U,9,42,14,38,0.323529,0.411765,0.235294,0.372549,2
+'1. FC Koln','Borussia Dortmund',10,2011_12,12,Gast,0,5,N,S,17,30,1,81,0.235294,0.294118,0.735294,0.794118,2
+'VfB Stuttgart','1. FC Nurnberg',10,2011_12,12,Gast,2,2,U,U,6,53,10,42,0.441176,0.519608,0.352941,0.411765,2
+'SC Freiburg','1. FC Kaiserslautern',10,2011_12,12,Gast,0,1,N,S,12,40,18,23,0.294118,0.392157,0.117647,0.22549,2
+'Borussia Monchengladbach','1899 Hoffenheim',10,2011_12,12,Gast,0,1,N,S,4,60,11,41,0.5,0.588235,0.294118,0.401961,2
+'1. FSV Mainz 05','Hertha BSC Berlin',10,2011_12,12,Gast,0,0,U,U,13,39,16,31,0.264706,0.382353,0.205882,0.303922,2
+'VfL Wolfsburg','Hamburger SV',10,2011_12,12,Gast,1,1,U,U,8,44,15,36,0.382353,0.431373,0.235294,0.352941,2
+'FC Schalke 04','Bayer 04 Leverkusen',10,2011_12,12,Gast,1,0,S,N,3,64,5,54,0.588235,0.627451,0.441176,0.529412,2
+'FC Bayern Munchen','Hannover 96',10,2011_12,12,Gast,1,2,N,S,2,73,7,48,0.676471,0.715686,0.352941,0.470588,2
+'SC Freiburg','Bayer 04 Leverkusen',11,2011_12,12,Heim,0,1,N,S,12,40,5,54,0.294118,0.392157,0.441176,0.529412,1
+'FC Bayern Munchen','1. FC Nurnberg',11,2011_12,12,Heim,4,0,S,N,2,73,10,42,0.676471,0.715686,0.352941,0.411765,1
+'FC Schalke 04','1899 Hoffenheim',11,2011_12,12,Heim,3,1,S,N,3,64,11,41,0.588235,0.627451,0.294118,0.401961,1
+'VfB Stuttgart','Borussia Dortmund',11,2011_12,12,Heim,1,1,U,U,6,53,1,81,0.441176,0.519608,0.735294,0.794118,1
+'VfL Wolfsburg','Hertha BSC Berlin',11,2011_12,12,Heim,2,3,N,S,8,44,16,31,0.382353,0.431373,0.205882,0.303922,1
+'Borussia Monchengladbach','Hannover 96',11,2011_12,12,Heim,2,1,S,N,4,60,7,48,0.5,0.588235,0.352941,0.470588,1
+'1. FSV Mainz 05','SV Werder Bremen',11,2011_12,12,Heim,1,3,N,S,13,39,9,42,0.264706,0.382353,0.323529,0.411765,1
+'1. FC Koln','FC Augsburg',11,2011_12,12,Heim,3,0,S,N,17,30,14,38,0.235294,0.294118,0.235294,0.372549,1
+'Hamburger SV','1. FC Kaiserslautern',11,2011_12,12,Heim,1,1,U,U,15,36,18,23,0.235294,0.352941,0.117647,0.22549,1
+'Bayer 04 Leverkusen','SC Freiburg',11,2011_12,12,Gast,1,0,S,N,5,54,12,40,0.441176,0.529412,0.294118,0.392157,2
+'1. FC Nurnberg','FC Bayern Munchen',11,2011_12,12,Gast,0,4,N,S,10,42,2,73,0.352941,0.411765,0.676471,0.715686,2
+'1899 Hoffenheim','FC Schalke 04',11,2011_12,12,Gast,1,3,N,S,11,41,3,64,0.294118,0.401961,0.588235,0.627451,2
+'Borussia Dortmund','VfB Stuttgart',11,2011_12,12,Gast,1,1,U,U,1,81,6,53,0.735294,0.794118,0.441176,0.519608,2
+'Hertha BSC Berlin','VfL Wolfsburg',11,2011_12,12,Gast,3,2,S,N,16,31,8,44,0.205882,0.303922,0.382353,0.431373,2
+'Hannover 96','Borussia Monchengladbach',11,2011_12,12,Gast,1,2,N,S,7,48,4,60,0.352941,0.470588,0.5,0.588235,2
+'SV Werder Bremen','1. FSV Mainz 05',11,2011_12,12,Gast,3,1,S,N,9,42,13,39,0.323529,0.411765,0.264706,0.382353,2
+'FC Augsburg','1. FC Koln',11,2011_12,12,Gast,0,3,N,S,14,38,17,30,0.235294,0.372549,0.235294,0.294118,2
+'1. FC Kaiserslautern','Hamburger SV',11,2011_12,12,Gast,1,1,U,U,18,23,15,36,0.117647,0.22549,0.235294,0.352941,2
+'1. FSV Mainz 05','VfB Stuttgart',12,2011_12,12,Heim,3,1,S,N,13,39,6,53,0.264706,0.382353,0.441176,0.519608,1
+'Borussia Dortmund','VfL Wolfsburg',12,2011_12,12,Heim,5,1,S,N,1,81,8,44,0.735294,0.794118,0.382353,0.431373,1
+'SV Werder Bremen','1. FC Koln',12,2011_12,12,Heim,3,2,S,N,9,42,17,30,0.323529,0.411765,0.235294,0.294118,1
+'1. FC Nurnberg','SC Freiburg',12,2011_12,12,Heim,1,2,N,S,10,42,12,40,0.352941,0.411765,0.294118,0.392157,1
+'1899 Hoffenheim','1. FC Kaiserslautern',12,2011_12,12,Heim,1,1,U,U,11,41,18,23,0.294118,0.401961,0.117647,0.22549,1
+'Hertha BSC Berlin','Borussia Monchengladbach',12,2011_12,12,Heim,1,2,N,S,16,31,4,60,0.205882,0.303922,0.5,0.588235,1
+'Bayer 04 Leverkusen','Hamburger SV',12,2011_12,12,Heim,2,2,U,U,5,54,15,36,0.441176,0.529412,0.235294,0.352941,1
+'Hannover 96','FC Schalke 04',12,2011_12,12,Heim,2,2,U,U,7,48,3,64,0.352941,0.470588,0.588235,0.627451,1
+'FC Augsburg','FC Bayern Munchen',12,2011_12,12,Heim,1,2,N,S,14,38,2,73,0.235294,0.372549,0.676471,0.715686,1
+'VfB Stuttgart','1. FSV Mainz 05',12,2011_12,12,Gast,1,3,N,S,6,53,13,39,0.441176,0.519608,0.264706,0.382353,2
+'VfL Wolfsburg','Borussia Dortmund',12,2011_12,12,Gast,1,5,N,S,8,44,1,81,0.382353,0.431373,0.735294,0.794118,2
+'1. FC Koln','SV Werder Bremen',12,2011_12,12,Gast,2,3,N,S,17,30,9,42,0.235294,0.294118,0.323529,0.411765,2
+'SC Freiburg','1. FC Nurnberg',12,2011_12,12,Gast,2,1,S,N,12,40,10,42,0.294118,0.392157,0.352941,0.411765,2
+'1. FC Kaiserslautern','1899 Hoffenheim',12,2011_12,12,Gast,1,1,U,U,18,23,11,41,0.117647,0.22549,0.294118,0.401961,2
+'Borussia Monchengladbach','Hertha BSC Berlin',12,2011_12,12,Gast,2,1,S,N,4,60,16,31,0.5,0.588235,0.205882,0.303922,2
+'Hamburger SV','Bayer 04 Leverkusen',12,2011_12,12,Gast,2,2,U,U,15,36,5,54,0.235294,0.352941,0.441176,0.529412,2
+'FC Schalke 04','Hannover 96',12,2011_12,12,Gast,2,2,U,U,3,64,7,48,0.588235,0.627451,0.352941,0.470588,2
+'FC Bayern Munchen','FC Augsburg',12,2011_12,12,Gast,2,1,S,N,2,73,14,38,0.676471,0.715686,0.235294,0.372549,2
+'1. FC Kaiserslautern','Bayer 04 Leverkusen',13,2011_12,12,Heim,0,2,N,S,18,23,5,54,0.117647,0.22549,0.441176,0.529412,1
+'FC Schalke 04','1. FC Nurnberg',13,2011_12,12,Heim,4,0,S,N,3,64,10,42,0.588235,0.627451,0.352941,0.411765,1
+'SC Freiburg','Hertha BSC Berlin',13,2011_12,12,Heim,2,2,U,U,12,40,16,31,0.294118,0.392157,0.205882,0.303922,1
+'VfL Wolfsburg','Hannover 96',13,2011_12,12,Heim,4,1,S,N,8,44,7,48,0.382353,0.431373,0.352941,0.470588,1
+'Borussia Monchengladbach','SV Werder Bremen',13,2011_12,12,Heim,5,0,S,N,4,60,9,42,0.5,0.588235,0.323529,0.411765,1
+'FC Bayern Munchen','Borussia Dortmund',13,2011_12,12,Heim,0,1,N,S,2,73,1,81,0.676471,0.715686,0.735294,0.794118,1
+'VfB Stuttgart','FC Augsburg',13,2011_12,12,Heim,2,1,S,N,6,53,14,38,0.441176,0.519608,0.235294,0.372549,1
+'Hamburger SV','1899 Hoffenheim',13,2011_12,12,Heim,2,0,S,N,15,36,11,41,0.235294,0.352941,0.294118,0.401961,1
+'1. FC Koln','1. FSV Mainz 05',13,2011_12,12,Heim,1,1,U,U,17,30,13,39,0.235294,0.294118,0.264706,0.382353,1
+'Bayer 04 Leverkusen','1. FC Kaiserslautern',13,2011_12,12,Gast,2,0,S,N,5,54,18,23,0.441176,0.529412,0.117647,0.22549,2
+'1. FC Nurnberg','FC Schalke 04',13,2011_12,12,Gast,0,4,N,S,10,42,3,64,0.352941,0.411765,0.588235,0.627451,2
+'Hertha BSC Berlin','SC Freiburg',13,2011_12,12,Gast,2,2,U,U,16,31,12,40,0.205882,0.303922,0.294118,0.392157,2
+'Hannover 96','VfL Wolfsburg',13,2011_12,12,Gast,1,4,N,S,7,48,8,44,0.352941,0.470588,0.382353,0.431373,2
+'SV Werder Bremen','Borussia Monchengladbach',13,2011_12,12,Gast,0,5,N,S,9,42,4,60,0.323529,0.411765,0.5,0.588235,2
+'Borussia Dortmund','FC Bayern Munchen',13,2011_12,12,Gast,1,0,S,N,1,81,2,73,0.735294,0.794118,0.676471,0.715686,2
+'FC Augsburg','VfB Stuttgart',13,2011_12,12,Gast,1,2,N,S,14,38,6,53,0.235294,0.372549,0.441176,0.519608,2
+'1899 Hoffenheim','Hamburger SV',13,2011_12,12,Gast,0,2,N,S,11,41,15,36,0.294118,0.401961,0.235294,0.352941,2
+'1. FSV Mainz 05','1. FC Koln',13,2011_12,12,Gast,1,1,U,U,13,39,17,30,0.264706,0.382353,0.235294,0.294118,2
+'1. FC Koln','Borussia Monchengladbach',14,2011_12,12,Heim,0,3,N,S,17,30,4,60,0.235294,0.294118,0.5,0.588235,1
+'Borussia Dortmund','FC Schalke 04',14,2011_12,12,Heim,2,0,S,N,1,81,3,64,0.735294,0.794118,0.588235,0.627451,1
+'1. FC Nurnberg','1. FC Kaiserslautern',14,2011_12,12,Heim,1,0,S,N,10,42,18,23,0.352941,0.411765,0.117647,0.22549,1
+'1899 Hoffenheim','SC Freiburg',14,2011_12,12,Heim,1,1,U,U,11,41,12,40,0.294118,0.401961,0.294118,0.392157,1
+'FC Augsburg','VfL Wolfsburg',14,2011_12,12,Heim,2,0,S,N,14,38,8,44,0.235294,0.372549,0.382353,0.431373,1
+'Hertha BSC Berlin','Bayer 04 Leverkusen',14,2011_12,12,Heim,3,3,U,U,16,31,5,54,0.205882,0.303922,0.441176,0.529412,1
+'Hannover 96','Hamburger SV',14,2011_12,12,Heim,1,1,U,U,7,48,15,36,0.352941,0.470588,0.235294,0.352941,1
+'SV Werder Bremen','VfB Stuttgart',14,2011_12,12,Heim,2,0,S,N,9,42,6,53,0.323529,0.411765,0.441176,0.519608,1
+'1. FSV Mainz 05','FC Bayern Munchen',14,2011_12,12,Heim,3,2,S,N,13,39,2,73,0.264706,0.382353,0.676471,0.715686,1
+'Borussia Monchengladbach','1. FC Koln',14,2011_12,12,Gast,3,0,S,N,4,60,17,30,0.5,0.588235,0.235294,0.294118,2
+'FC Schalke 04','Borussia Dortmund',14,2011_12,12,Gast,0,2,N,S,3,64,1,81,0.588235,0.627451,0.735294,0.794118,2
+'1. FC Kaiserslautern','1. FC Nurnberg',14,2011_12,12,Gast,0,1,N,S,18,23,10,42,0.117647,0.22549,0.352941,0.411765,2
+'SC Freiburg','1899 Hoffenheim',14,2011_12,12,Gast,1,1,U,U,12,40,11,41,0.294118,0.392157,0.294118,0.401961,2
+'VfL Wolfsburg','FC Augsburg',14,2011_12,12,Gast,0,2,N,S,8,44,14,38,0.382353,0.431373,0.235294,0.372549,2
+'Bayer 04 Leverkusen','Hertha BSC Berlin',14,2011_12,12,Gast,3,3,U,U,5,54,16,31,0.441176,0.529412,0.205882,0.303922,2
+'Hamburger SV','Hannover 96',14,2011_12,12,Gast,1,1,U,U,15,36,7,48,0.235294,0.352941,0.352941,0.470588,2
+'VfB Stuttgart','SV Werder Bremen',14,2011_12,12,Gast,0,2,N,S,6,53,9,42,0.441176,0.519608,0.323529,0.411765,2
+'FC Bayern Munchen','1. FSV Mainz 05',14,2011_12,12,Gast,2,3,N,S,2,73,13,39,0.676471,0.715686,0.264706,0.382353,2
+'Bayer 04 Leverkusen','1899 Hoffenheim',15,2011_12,12,Heim,2,0,S,N,5,54,11,41,0.441176,0.529412,0.294118,0.401961,1
+'FC Bayern Munchen','SV Werder Bremen',15,2011_12,12,Heim,4,1,S,N,2,73,9,42,0.676471,0.715686,0.323529,0.411765,1
+'SC Freiburg','Hannover 96',15,2011_12,12,Heim,1,1,U,U,12,40,7,48,0.294118,0.392157,0.352941,0.470588,1
+'1. FC Kaiserslautern','Hertha BSC Berlin',15,2011_12,12,Heim,1,1,U,U,18,23,16,31,0.117647,0.22549,0.205882,0.303922,1
+'VfL Wolfsburg','1. FSV Mainz 05',15,2011_12,12,Heim,2,2,U,U,8,44,13,39,0.382353,0.431373,0.264706,0.382353,1
+'Borussia Monchengladbach','Borussia Dortmund',15,2011_12,12,Heim,1,1,U,U,4,60,1,81,0.5,0.588235,0.735294,0.794118,1
+'VfB Stuttgart','1. FC Koln',15,2011_12,12,Heim,2,2,U,U,6,53,17,30,0.441176,0.519608,0.235294,0.294118,1
+'Hamburger SV','1. FC Nurnberg',15,2011_12,12,Heim,2,0,S,N,15,36,10,42,0.235294,0.352941,0.352941,0.411765,1
+'FC Schalke 04','FC Augsburg',15,2011_12,12,Heim,3,1,S,N,3,64,14,38,0.588235,0.627451,0.235294,0.372549,1
+'1899 Hoffenheim','Bayer 04 Leverkusen',15,2011_12,12,Gast,0,2,N,S,11,41,5,54,0.294118,0.401961,0.441176,0.529412,2
+'SV Werder Bremen','FC Bayern Munchen',15,2011_12,12,Gast,1,4,N,S,9,42,2,73,0.323529,0.411765,0.676471,0.715686,2
+'Hannover 96','SC Freiburg',15,2011_12,12,Gast,1,1,U,U,7,48,12,40,0.352941,0.470588,0.294118,0.392157,2
+'Hertha BSC Berlin','1. FC Kaiserslautern',15,2011_12,12,Gast,1,1,U,U,16,31,18,23,0.205882,0.303922,0.117647,0.22549,2
+'1. FSV Mainz 05','VfL Wolfsburg',15,2011_12,12,Gast,2,2,U,U,13,39,8,44,0.264706,0.382353,0.382353,0.431373,2
+'Borussia Dortmund','Borussia Monchengladbach',15,2011_12,12,Gast,1,1,U,U,1,81,4,60,0.735294,0.794118,0.5,0.588235,2
+'1. FC Koln','VfB Stuttgart',15,2011_12,12,Gast,2,2,U,U,17,30,6,53,0.235294,0.294118,0.441176,0.519608,2
+'1. FC Nurnberg','Hamburger SV',15,2011_12,12,Gast,0,2,N,S,10,42,15,36,0.352941,0.411765,0.235294,0.352941,2
+'FC Augsburg','FC Schalke 04',15,2011_12,12,Gast,1,3,N,S,14,38,3,64,0.235294,0.372549,0.588235,0.627451,2
+'Hertha BSC Berlin','FC Schalke 04',16,2011_12,12,Heim,1,2,N,S,16,31,3,64,0.205882,0.303922,0.588235,0.627451,1
+'SV Werder Bremen','VfL Wolfsburg',16,2011_12,12,Heim,4,1,S,N,9,42,8,44,0.323529,0.411765,0.382353,0.431373,1
+'1. FSV Mainz 05','Hamburger SV',16,2011_12,12,Heim,0,0,U,U,13,39,15,36,0.264706,0.382353,0.235294,0.352941,1
+'1. FC Nurnberg','1899 Hoffenheim',16,2011_12,12,Heim,0,2,N,S,10,42,11,41,0.352941,0.411765,0.294118,0.401961,1
+'1. FC Koln','SC Freiburg',16,2011_12,12,Heim,4,0,S,N,17,30,12,40,0.235294,0.294118,0.294118,0.392157,1
+'FC Augsburg','Borussia Monchengladbach',16,2011_12,12,Heim,1,0,S,N,14,38,4,60,0.235294,0.372549,0.5,0.588235,1
+'Hannover 96','Bayer 04 Leverkusen',16,2011_12,12,Heim,0,0,U,U,7,48,5,54,0.352941,0.470588,0.441176,0.529412,1
+'Borussia Dortmund','1. FC Kaiserslautern',16,2011_12,12,Heim,1,1,U,U,1,81,18,23,0.735294,0.794118,0.117647,0.22549,1
+'VfB Stuttgart','FC Bayern Munchen',16,2011_12,12,Heim,1,2,N,S,6,53,2,73,0.441176,0.519608,0.676471,0.715686,1
+'FC Schalke 04','Hertha BSC Berlin',16,2011_12,12,Gast,2,1,S,N,3,64,16,31,0.588235,0.627451,0.205882,0.303922,2
+'VfL Wolfsburg','SV Werder Bremen',16,2011_12,12,Gast,1,4,N,S,8,44,9,42,0.382353,0.431373,0.323529,0.411765,2
+'Hamburger SV','1. FSV Mainz 05',16,2011_12,12,Gast,0,0,U,U,15,36,13,39,0.235294,0.352941,0.264706,0.382353,2
+'1899 Hoffenheim','1. FC Nurnberg',16,2011_12,12,Gast,2,0,S,N,11,41,10,42,0.294118,0.401961,0.352941,0.411765,2
+'SC Freiburg','1. FC Koln',16,2011_12,12,Gast,0,4,N,S,12,40,17,30,0.294118,0.392157,0.235294,0.294118,2
+'Borussia Monchengladbach','FC Augsburg',16,2011_12,12,Gast,0,1,N,S,4,60,14,38,0.5,0.588235,0.235294,0.372549,2
+'Bayer 04 Leverkusen','Hannover 96',16,2011_12,12,Gast,0,0,U,U,5,54,7,48,0.441176,0.529412,0.352941,0.470588,2
+'1. FC Kaiserslautern','Borussia Dortmund',16,2011_12,12,Gast,1,1,U,U,18,23,1,81,0.117647,0.22549,0.735294,0.794118,2
+'FC Bayern Munchen','VfB Stuttgart',16,2011_12,12,Gast,2,1,S,N,2,73,6,53,0.676471,0.715686,0.441176,0.519608,2
+'FC Bayern Munchen','1. FC Koln',17,2011_12,12,Heim,3,0,S,N,2,73,17,30,0.676471,0.715686,0.235294,0.294118,1
+'Bayer 04 Leverkusen','1. FC Nurnberg',17,2011_12,12,Heim,0,3,N,S,5,54,10,42,0.441176,0.529412,0.352941,0.411765,1
+'Hamburger SV','FC Augsburg',17,2011_12,12,Heim,1,1,U,U,15,36,14,38,0.235294,0.352941,0.235294,0.372549,1
+'SC Freiburg','Borussia Dortmund',17,2011_12,12,Heim,1,4,N,S,12,40,1,81,0.294118,0.392157,0.735294,0.794118,1
+'1899 Hoffenheim','Hertha BSC Berlin',17,2011_12,12,Heim,1,1,U,U,11,41,16,31,0.294118,0.401961,0.205882,0.303922,1
+'VfL Wolfsburg','VfB Stuttgart',17,2011_12,12,Heim,1,0,S,N,8,44,6,53,0.382353,0.431373,0.441176,0.519608,1
+'FC Schalke 04','SV Werder Bremen',17,2011_12,12,Heim,5,0,S,N,3,64,9,42,0.588235,0.627451,0.323529,0.411765,1
+'1. FC Kaiserslautern','Hannover 96',17,2011_12,12,Heim,1,1,U,U,18,23,7,48,0.117647,0.22549,0.352941,0.470588,1
+'Borussia Monchengladbach','1. FSV Mainz 05',17,2011_12,12,Heim,1,0,S,N,4,60,13,39,0.5,0.588235,0.264706,0.382353,1
+'1. FC Koln','FC Bayern Munchen',17,2011_12,12,Gast,0,3,N,S,17,30,2,73,0.235294,0.294118,0.676471,0.715686,2
+'1. FC Nurnberg','Bayer 04 Leverkusen',17,2011_12,12,Gast,3,0,S,N,10,42,5,54,0.352941,0.411765,0.441176,0.529412,2
+'FC Augsburg','Hamburger SV',17,2011_12,12,Gast,1,1,U,U,14,38,15,36,0.235294,0.372549,0.235294,0.352941,2
+'Borussia Dortmund','SC Freiburg',17,2011_12,12,Gast,4,1,S,N,1,81,12,40,0.735294,0.794118,0.294118,0.392157,2
+'Hertha BSC Berlin','1899 Hoffenheim',17,2011_12,12,Gast,1,1,U,U,16,31,11,41,0.205882,0.303922,0.294118,0.401961,2
+'VfB Stuttgart','VfL Wolfsburg',17,2011_12,12,Gast,0,1,N,S,6,53,8,44,0.441176,0.519608,0.382353,0.431373,2
+'SV Werder Bremen','FC Schalke 04',17,2011_12,12,Gast,0,5,N,S,9,42,3,64,0.323529,0.411765,0.588235,0.627451,2
+'Hannover 96','1. FC Kaiserslautern',17,2011_12,12,Gast,1,1,U,U,7,48,18,23,0.352941,0.470588,0.117647,0.22549,2
+'1. FSV Mainz 05','Borussia Monchengladbach',17,2011_12,12,Gast,0,1,N,S,13,39,4,60,0.264706,0.382353,0.5,0.588235,2
+'Borussia Monchengladbach','FC Bayern Munchen',18,2011_12,12,Heim,3,1,S,N,4,60,2,73,0.5,0.588235,0.676471,0.715686,1
+'FC Schalke 04','VfB Stuttgart',18,2011_12,12,Heim,3,1,S,N,3,64,6,53,0.588235,0.627451,0.441176,0.519608,1
+'1. FC Nurnberg','Hertha BSC Berlin',18,2011_12,12,Heim,2,0,S,N,10,42,16,31,0.352941,0.411765,0.205882,0.303922,1
+'SC Freiburg','FC Augsburg',18,2011_12,12,Heim,1,0,S,N,12,40,14,38,0.294118,0.392157,0.235294,0.372549,1
+'1899 Hoffenheim','Hannover 96',18,2011_12,12,Heim,0,0,U,U,11,41,7,48,0.294118,0.401961,0.352941,0.470588,1
+'VfL Wolfsburg','1. FC Koln',18,2011_12,12,Heim,1,0,S,N,8,44,17,30,0.382353,0.431373,0.235294,0.294118,1
+'1. FC Kaiserslautern','SV Werder Bremen',18,2011_12,12,Heim,0,0,U,U,18,23,9,42,0.117647,0.22549,0.323529,0.411765,1
+'Hamburger SV','Borussia Dortmund',18,2011_12,12,Heim,1,5,N,S,15,36,1,81,0.235294,0.352941,0.735294,0.794118,1
+'Bayer 04 Leverkusen','1. FSV Mainz 05',18,2011_12,12,Heim,3,2,S,N,5,54,13,39,0.441176,0.529412,0.264706,0.382353,1
+'FC Bayern Munchen','Borussia Monchengladbach',18,2011_12,12,Gast,1,3,N,S,2,73,4,60,0.676471,0.715686,0.5,0.588235,2
+'VfB Stuttgart','FC Schalke 04',18,2011_12,12,Gast,1,3,N,S,6,53,3,64,0.441176,0.519608,0.588235,0.627451,2
+'Hertha BSC Berlin','1. FC Nurnberg',18,2011_12,12,Gast,0,2,N,S,16,31,10,42,0.205882,0.303922,0.352941,0.411765,2
+'FC Augsburg','SC Freiburg',18,2011_12,12,Gast,0,1,N,S,14,38,12,40,0.235294,0.372549,0.294118,0.392157,2
+'Hannover 96','1899 Hoffenheim',18,2011_12,12,Gast,0,0,U,U,7,48,11,41,0.352941,0.470588,0.294118,0.401961,2
+'1. FC Koln','VfL Wolfsburg',18,2011_12,12,Gast,0,1,N,S,17,30,8,44,0.235294,0.294118,0.382353,0.431373,2
+'SV Werder Bremen','1. FC Kaiserslautern',18,2011_12,12,Gast,0,0,U,U,9,42,18,23,0.323529,0.411765,0.117647,0.22549,2
+'Borussia Dortmund','Hamburger SV',18,2011_12,12,Gast,5,1,S,N,1,81,15,36,0.735294,0.794118,0.235294,0.352941,2
+'1. FSV Mainz 05','Bayer 04 Leverkusen',18,2011_12,12,Gast,2,3,N,S,13,39,5,54,0.264706,0.382353,0.441176,0.529412,2
+'Hannover 96','1. FC Nurnberg',19,2011_12,12,Heim,1,0,S,N,7,48,10,42,0.352941,0.470588,0.352941,0.411765,1
+'Borussia Dortmund','1899 Hoffenheim',19,2011_12,12,Heim,3,1,S,N,1,81,11,41,0.735294,0.794118,0.294118,0.401961,1
+'FC Bayern Munchen','VfL Wolfsburg',19,2011_12,12,Heim,2,0,S,N,2,73,8,44,0.676471,0.715686,0.382353,0.431373,1
+'SV Werder Bremen','Bayer 04 Leverkusen',19,2011_12,12,Heim,1,1,U,U,9,42,5,54,0.323529,0.411765,0.441176,0.529412,1
+'FC Augsburg','1. FC Kaiserslautern',19,2011_12,12,Heim,2,2,U,U,14,38,18,23,0.235294,0.372549,0.117647,0.22549,1
+'Hertha BSC Berlin','Hamburger SV',19,2011_12,12,Heim,1,2,N,S,16,31,15,36,0.205882,0.303922,0.235294,0.352941,1
+'1. FC Koln','FC Schalke 04',19,2011_12,12,Heim,1,4,N,S,17,30,3,64,0.235294,0.294118,0.588235,0.627451,1
+'1. FSV Mainz 05','SC Freiburg',19,2011_12,12,Heim,3,1,S,N,13,39,12,40,0.264706,0.382353,0.294118,0.392157,1
+'VfB Stuttgart','Borussia Monchengladbach',19,2011_12,12,Heim,0,3,N,S,6,53,4,60,0.441176,0.519608,0.5,0.588235,1
+'1. FC Nurnberg','Hannover 96',19,2011_12,12,Gast,0,1,N,S,10,42,7,48,0.352941,0.411765,0.352941,0.470588,2
+'1899 Hoffenheim','Borussia Dortmund',19,2011_12,12,Gast,1,3,N,S,11,41,1,81,0.294118,0.401961,0.735294,0.794118,2
+'VfL Wolfsburg','FC Bayern Munchen',19,2011_12,12,Gast,0,2,N,S,8,44,2,73,0.382353,0.431373,0.676471,0.715686,2
+'Bayer 04 Leverkusen','SV Werder Bremen',19,2011_12,12,Gast,1,1,U,U,5,54,9,42,0.441176,0.529412,0.323529,0.411765,2
+'1. FC Kaiserslautern','FC Augsburg',19,2011_12,12,Gast,2,2,U,U,18,23,14,38,0.117647,0.22549,0.235294,0.372549,2
+'Hamburger SV','Hertha BSC Berlin',19,2011_12,12,Gast,2,1,S,N,15,36,16,31,0.235294,0.352941,0.205882,0.303922,2
+'FC Schalke 04','1. FC Koln',19,2011_12,12,Gast,4,1,S,N,3,64,17,30,0.588235,0.627451,0.235294,0.294118,2
+'SC Freiburg','1. FSV Mainz 05',19,2011_12,12,Gast,1,3,N,S,12,40,13,39,0.294118,0.392157,0.264706,0.382353,2
+'Borussia Monchengladbach','VfB Stuttgart',19,2011_12,12,Gast,3,0,S,N,4,60,6,53,0.5,0.588235,0.441176,0.519608,2
+'1. FC Nurnberg','Borussia Dortmund',20,2011_12,12,Heim,0,2,N,S,10,42,1,81,0.352941,0.411765,0.735294,0.794118,1
+'Bayer 04 Leverkusen','VfB Stuttgart',20,2011_12,12,Heim,2,2,U,U,5,54,6,53,0.441176,0.529412,0.441176,0.519608,1
+'FC Schalke 04','1. FSV Mainz 05',20,2011_12,12,Heim,1,1,U,U,3,64,13,39,0.588235,0.627451,0.264706,0.382353,1
+'1899 Hoffenheim','FC Augsburg',20,2011_12,12,Heim,2,2,U,U,11,41,14,38,0.294118,0.401961,0.235294,0.372549,1
+'VfL Wolfsburg','Borussia Monchengladbach',20,2011_12,12,Heim,0,0,U,U,8,44,4,60,0.382353,0.431373,0.5,0.588235,1
+'Hertha BSC Berlin','Hannover 96',20,2011_12,12,Heim,0,1,N,S,16,31,7,48,0.205882,0.303922,0.352941,0.470588,1
+'Hamburger SV','FC Bayern Munchen',20,2011_12,12,Heim,1,1,U,U,15,36,2,73,0.235294,0.352941,0.676471,0.715686,1
+'SC Freiburg','SV Werder Bremen',20,2011_12,12,Heim,2,2,U,U,12,40,9,42,0.294118,0.392157,0.323529,0.411765,1
+'1. FC Kaiserslautern','1. FC Koln',20,2011_12,12,Heim,0,1,N,S,18,23,17,30,0.117647,0.22549,0.235294,0.294118,1
+'Borussia Dortmund','1. FC Nurnberg',20,2011_12,12,Gast,2,0,S,N,1,81,10,42,0.735294,0.794118,0.352941,0.411765,2
+'VfB Stuttgart','Bayer 04 Leverkusen',20,2011_12,12,Gast,2,2,U,U,6,53,5,54,0.441176,0.519608,0.441176,0.529412,2
+'1. FSV Mainz 05','FC Schalke 04',20,2011_12,12,Gast,1,1,U,U,13,39,3,64,0.264706,0.382353,0.588235,0.627451,2
+'FC Augsburg','1899 Hoffenheim',20,2011_12,12,Gast,2,2,U,U,14,38,11,41,0.235294,0.372549,0.294118,0.401961,2
+'Borussia Monchengladbach','VfL Wolfsburg',20,2011_12,12,Gast,0,0,U,U,4,60,8,44,0.5,0.588235,0.382353,0.431373,2
+'Hannover 96','Hertha BSC Berlin',20,2011_12,12,Gast,1,0,S,N,7,48,16,31,0.352941,0.470588,0.205882,0.303922,2
+'FC Bayern Munchen','Hamburger SV',20,2011_12,12,Gast,1,1,U,U,2,73,15,36,0.676471,0.715686,0.235294,0.352941,2
+'SV Werder Bremen','SC Freiburg',20,2011_12,12,Gast,2,2,U,U,9,42,12,40,0.323529,0.411765,0.294118,0.392157,2
+'1. FC Koln','1. FC Kaiserslautern',20,2011_12,12,Gast,1,0,S,N,17,30,18,23,0.235294,0.294118,0.117647,0.22549,2
+'VfL Wolfsburg','SC Freiburg',21,2011_12,12,Heim,3,2,S,N,8,44,12,40,0.382353,0.431373,0.294118,0.392157,1
+'Borussia Dortmund','Bayer 04 Leverkusen',21,2011_12,12,Heim,1,0,S,N,1,81,5,54,0.735294,0.794118,0.441176,0.529412,1
+'FC Bayern Munchen','1. FC Kaiserslautern',21,2011_12,12,Heim,2,0,S,N,2,73,18,23,0.676471,0.715686,0.117647,0.22549,1
+'SV Werder Bremen','1899 Hoffenheim',21,2011_12,12,Heim,1,1,U,U,9,42,11,41,0.323529,0.411765,0.294118,0.401961,1
+'1. FSV Mainz 05','Hannover 96',21,2011_12,12,Heim,1,1,U,U,13,39,7,48,0.264706,0.382353,0.352941,0.470588,1
+'VfB Stuttgart','Hertha BSC Berlin',21,2011_12,12,Heim,5,0,S,N,6,53,16,31,0.441176,0.519608,0.205882,0.303922,1
+'Borussia Monchengladbach','FC Schalke 04',21,2011_12,12,Heim,3,0,S,N,4,60,3,64,0.5,0.588235,0.588235,0.627451,1
+'FC Augsburg','1. FC Nurnberg',21,2011_12,12,Heim,0,0,U,U,14,38,10,42,0.235294,0.372549,0.352941,0.411765,1
+'1. FC Koln','Hamburger SV',21,2011_12,12,Heim,0,1,N,S,17,30,15,36,0.235294,0.294118,0.235294,0.352941,1
+'SC Freiburg','VfL Wolfsburg',21,2011_12,12,Gast,2,3,N,S,12,40,8,44,0.294118,0.392157,0.382353,0.431373,2
+'Bayer 04 Leverkusen','Borussia Dortmund',21,2011_12,12,Gast,0,1,N,S,5,54,1,81,0.441176,0.529412,0.735294,0.794118,2
+'1. FC Kaiserslautern','FC Bayern Munchen',21,2011_12,12,Gast,0,2,N,S,18,23,2,73,0.117647,0.22549,0.676471,0.715686,2
+'1899 Hoffenheim','SV Werder Bremen',21,2011_12,12,Gast,1,1,U,U,11,41,9,42,0.294118,0.401961,0.323529,0.411765,2
+'Hannover 96','1. FSV Mainz 05',21,2011_12,12,Gast,1,1,U,U,7,48,13,39,0.352941,0.470588,0.264706,0.382353,2
+'Hertha BSC Berlin','VfB Stuttgart',21,2011_12,12,Gast,0,5,N,S,16,31,6,53,0.205882,0.303922,0.441176,0.519608,2
+'FC Schalke 04','Borussia Monchengladbach',21,2011_12,12,Gast,0,3,N,S,3,64,4,60,0.588235,0.627451,0.5,0.588235,2
+'1. FC Nurnberg','FC Augsburg',21,2011_12,12,Gast,0,0,U,U,10,42,14,38,0.352941,0.411765,0.235294,0.372549,2
+'Hamburger SV','1. FC Koln',21,2011_12,12,Gast,1,0,S,N,15,36,17,30,0.235294,0.352941,0.235294,0.294118,2
+'1899 Hoffenheim','1. FSV Mainz 05',22,2011_12,12,Heim,1,1,U,U,11,41,13,39,0.294118,0.401961,0.264706,0.382353,1
+'Bayer 04 Leverkusen','FC Augsburg',22,2011_12,12,Heim,4,1,S,N,5,54,14,38,0.441176,0.529412,0.235294,0.372549,1
+'Hamburger SV','SV Werder Bremen',22,2011_12,12,Heim,1,3,N,S,15,36,9,42,0.235294,0.352941,0.323529,0.411765,1
+'1. FC Nurnberg','1. FC Koln',22,2011_12,12,Heim,2,1,S,N,10,42,17,30,0.352941,0.411765,0.235294,0.294118,1
+'1. FC Kaiserslautern','Borussia Monchengladbach',22,2011_12,12,Heim,1,2,N,S,18,23,4,60,0.117647,0.22549,0.5,0.588235,1
+'Hertha BSC Berlin','Borussia Dortmund',22,2011_12,12,Heim,0,1,N,S,16,31,1,81,0.205882,0.303922,0.735294,0.794118,1
+'SC Freiburg','FC Bayern Munchen',22,2011_12,12,Heim,0,0,U,U,12,40,2,73,0.294118,0.392157,0.676471,0.715686,1
+'FC Schalke 04','VfL Wolfsburg',22,2011_12,12,Heim,4,0,S,N,3,64,8,44,0.588235,0.627451,0.382353,0.431373,1
+'Hannover 96','VfB Stuttgart',22,2011_12,12,Heim,4,2,S,N,7,48,6,53,0.352941,0.470588,0.441176,0.519608,1
+'1. FSV Mainz 05','1899 Hoffenheim',22,2011_12,12,Gast,1,1,U,U,13,39,11,41,0.264706,0.382353,0.294118,0.401961,2
+'FC Augsburg','Bayer 04 Leverkusen',22,2011_12,12,Gast,1,4,N,S,14,38,5,54,0.235294,0.372549,0.441176,0.529412,2
+'SV Werder Bremen','Hamburger SV',22,2011_12,12,Gast,3,1,S,N,9,42,15,36,0.323529,0.411765,0.235294,0.352941,2
+'1. FC Koln','1. FC Nurnberg',22,2011_12,12,Gast,1,2,N,S,17,30,10,42,0.235294,0.294118,0.352941,0.411765,2
+'Borussia Monchengladbach','1. FC Kaiserslautern',22,2011_12,12,Gast,2,1,S,N,4,60,18,23,0.5,0.588235,0.117647,0.22549,2
+'Borussia Dortmund','Hertha BSC Berlin',22,2011_12,12,Gast,1,0,S,N,1,81,16,31,0.735294,0.794118,0.205882,0.303922,2
+'FC Bayern Munchen','SC Freiburg',22,2011_12,12,Gast,0,0,U,U,2,73,12,40,0.676471,0.715686,0.294118,0.392157,2
+'VfL Wolfsburg','FC Schalke 04',22,2011_12,12,Gast,0,4,N,S,8,44,3,64,0.382353,0.431373,0.588235,0.627451,2
+'VfB Stuttgart','Hannover 96',22,2011_12,12,Gast,2,4,N,S,6,53,7,48,0.441176,0.519608,0.352941,0.470588,2
+'Borussia Monchengladbach','Hamburger SV',23,2011_12,12,Heim,1,1,U,U,4,60,15,36,0.5,0.588235,0.235294,0.352941,1
+'1. FSV Mainz 05','1. FC Kaiserslautern',23,2011_12,12,Heim,4,0,S,N,13,39,18,23,0.264706,0.382353,0.117647,0.22549,1
+'VfB Stuttgart','SC Freiburg',23,2011_12,12,Heim,4,1,S,N,6,53,12,40,0.441176,0.519608,0.294118,0.392157,1
+'1. FC Koln','Bayer 04 Leverkusen',23,2011_12,12,Heim,0,2,N,S,17,30,5,54,0.235294,0.294118,0.441176,0.529412,1
+'VfL Wolfsburg','1899 Hoffenheim',23,2011_12,12,Heim,1,2,N,S,8,44,11,41,0.382353,0.431373,0.294118,0.401961,1
+'FC Augsburg','Hertha BSC Berlin',23,2011_12,12,Heim,3,0,S,N,14,38,16,31,0.235294,0.372549,0.205882,0.303922,1
+'SV Werder Bremen','1. FC Nurnberg',23,2011_12,12,Heim,0,1,N,S,9,42,10,42,0.323529,0.411765,0.352941,0.411765,1
+'FC Bayern Munchen','FC Schalke 04',23,2011_12,12,Heim,2,0,S,N,2,73,3,64,0.676471,0.715686,0.588235,0.627451,1
+'Borussia Dortmund','Hannover 96',23,2011_12,12,Heim,3,1,S,N,1,81,7,48,0.735294,0.794118,0.352941,0.470588,1
+'Hamburger SV','Borussia Monchengladbach',23,2011_12,12,Gast,1,1,U,U,15,36,4,60,0.235294,0.352941,0.5,0.588235,2
+'1. FC Kaiserslautern','1. FSV Mainz 05',23,2011_12,12,Gast,0,4,N,S,18,23,13,39,0.117647,0.22549,0.264706,0.382353,2
+'SC Freiburg','VfB Stuttgart',23,2011_12,12,Gast,1,4,N,S,12,40,6,53,0.294118,0.392157,0.441176,0.519608,2
+'Bayer 04 Leverkusen','1. FC Koln',23,2011_12,12,Gast,2,0,S,N,5,54,17,30,0.441176,0.529412,0.235294,0.294118,2
+'1899 Hoffenheim','VfL Wolfsburg',23,2011_12,12,Gast,2,1,S,N,11,41,8,44,0.294118,0.401961,0.382353,0.431373,2
+'Hertha BSC Berlin','FC Augsburg',23,2011_12,12,Gast,0,3,N,S,16,31,14,38,0.205882,0.303922,0.235294,0.372549,2
+'1. FC Nurnberg','SV Werder Bremen',23,2011_12,12,Gast,1,0,S,N,10,42,9,42,0.352941,0.411765,0.323529,0.411765,2
+'FC Schalke 04','FC Bayern Munchen',23,2011_12,12,Gast,0,2,N,S,3,64,2,73,0.588235,0.627451,0.676471,0.715686,2
+'Hannover 96','Borussia Dortmund',23,2011_12,12,Gast,1,3,N,S,7,48,1,81,0.352941,0.470588,0.735294,0.794118,2
+'Bayer 04 Leverkusen','FC Bayern Munchen',24,2011_12,12,Heim,2,0,S,N,5,54,2,73,0.441176,0.529412,0.676471,0.715686,1
+'Hamburger SV','VfB Stuttgart',24,2011_12,12,Heim,0,4,N,S,15,36,6,53,0.235294,0.352941,0.441176,0.519608,1
+'Hannover 96','FC Augsburg',24,2011_12,12,Heim,2,2,U,U,7,48,14,38,0.352941,0.470588,0.235294,0.372549,1
+'SC Freiburg','FC Schalke 04',24,2011_12,12,Heim,2,1,S,N,12,40,3,64,0.294118,0.392157,0.588235,0.627451,1
+'1. FC Kaiserslautern','VfL Wolfsburg',24,2011_12,12,Heim,0,0,U,U,18,23,8,44,0.117647,0.22549,0.382353,0.431373,1
+'Hertha BSC Berlin','SV Werder Bremen',24,2011_12,12,Heim,1,0,S,N,16,31,9,42,0.205882,0.303922,0.323529,0.411765,1
+'Borussia Dortmund','1. FSV Mainz 05',24,2011_12,12,Heim,2,1,S,N,1,81,13,39,0.735294,0.794118,0.264706,0.382353,1
+'1. FC Nurnberg','Borussia Monchengladbach',24,2011_12,12,Heim,1,0,S,N,10,42,4,60,0.352941,0.411765,0.5,0.588235,1
+'1899 Hoffenheim','1. FC Koln',24,2011_12,12,Heim,1,1,U,U,11,41,17,30,0.294118,0.401961,0.235294,0.294118,1
+'FC Bayern Munchen','Bayer 04 Leverkusen',24,2011_12,12,Gast,0,2,N,S,2,73,5,54,0.676471,0.715686,0.441176,0.529412,2
+'VfB Stuttgart','Hamburger SV',24,2011_12,12,Gast,4,0,S,N,6,53,15,36,0.441176,0.519608,0.235294,0.352941,2
+'FC Augsburg','Hannover 96',24,2011_12,12,Gast,2,2,U,U,14,38,7,48,0.235294,0.372549,0.352941,0.470588,2
+'FC Schalke 04','SC Freiburg',24,2011_12,12,Gast,1,2,N,S,3,64,12,40,0.588235,0.627451,0.294118,0.392157,2
+'VfL Wolfsburg','1. FC Kaiserslautern',24,2011_12,12,Gast,0,0,U,U,8,44,18,23,0.382353,0.431373,0.117647,0.22549,2
+'SV Werder Bremen','Hertha BSC Berlin',24,2011_12,12,Gast,0,1,N,S,9,42,16,31,0.323529,0.411765,0.205882,0.303922,2
+'1. FSV Mainz 05','Borussia Dortmund',24,2011_12,12,Gast,1,2,N,S,13,39,1,81,0.264706,0.382353,0.735294,0.794118,2
+'Borussia Monchengladbach','1. FC Nurnberg',24,2011_12,12,Gast,0,1,N,S,4,60,10,42,0.5,0.588235,0.352941,0.411765,2
+'1. FC Koln','1899 Hoffenheim',24,2011_12,12,Gast,1,1,U,U,17,30,11,41,0.235294,0.294118,0.294118,0.401961,2
+'VfB Stuttgart','1. FC Kaiserslautern',25,2011_12,12,Heim,0,0,U,U,6,53,18,23,0.441176,0.519608,0.117647,0.22549,1
+'FC Bayern Munchen','1899 Hoffenheim',25,2011_12,12,Heim,7,1,S,N,2,73,11,41,0.676471,0.715686,0.294118,0.401961,1
+'1. FSV Mainz 05','1. FC Nurnberg',25,2011_12,12,Heim,2,1,S,N,13,39,10,42,0.264706,0.382353,0.352941,0.411765,1
+'1. FC Koln','Hertha BSC Berlin',25,2011_12,12,Heim,1,0,S,N,17,30,16,31,0.235294,0.294118,0.205882,0.303922,1
+'VfL Wolfsburg','Bayer 04 Leverkusen',25,2011_12,12,Heim,3,2,S,N,8,44,5,54,0.382353,0.431373,0.441176,0.529412,1
+'Borussia Monchengladbach','SC Freiburg',25,2011_12,12,Heim,0,0,U,U,4,60,12,40,0.5,0.588235,0.294118,0.392157,1
+'FC Augsburg','Borussia Dortmund',25,2011_12,12,Heim,0,0,U,U,14,38,1,81,0.235294,0.372549,0.735294,0.794118,1
+'SV Werder Bremen','Hannover 96',25,2011_12,12,Heim,3,0,S,N,9,42,7,48,0.323529,0.411765,0.352941,0.470588,1
+'FC Schalke 04','Hamburger SV',25,2011_12,12,Heim,3,1,S,N,3,64,15,36,0.588235,0.627451,0.235294,0.352941,1
+'1. FC Kaiserslautern','VfB Stuttgart',25,2011_12,12,Gast,0,0,U,U,18,23,6,53,0.117647,0.22549,0.441176,0.519608,2
+'1899 Hoffenheim','FC Bayern Munchen',25,2011_12,12,Gast,1,7,N,S,11,41,2,73,0.294118,0.401961,0.676471,0.715686,2
+'1. FC Nurnberg','1. FSV Mainz 05',25,2011_12,12,Gast,1,2,N,S,10,42,13,39,0.352941,0.411765,0.264706,0.382353,2
+'Hertha BSC Berlin','1. FC Koln',25,2011_12,12,Gast,0,1,N,S,16,31,17,30,0.205882,0.303922,0.235294,0.294118,2
+'Bayer 04 Leverkusen','VfL Wolfsburg',25,2011_12,12,Gast,2,3,N,S,5,54,8,44,0.441176,0.529412,0.382353,0.431373,2
+'SC Freiburg','Borussia Monchengladbach',25,2011_12,12,Gast,0,0,U,U,12,40,4,60,0.294118,0.392157,0.5,0.588235,2
+'Borussia Dortmund','FC Augsburg',25,2011_12,12,Gast,0,0,U,U,1,81,14,38,0.735294,0.794118,0.235294,0.372549,2
+'Hannover 96','SV Werder Bremen',25,2011_12,12,Gast,0,3,N,S,7,48,9,42,0.352941,0.470588,0.323529,0.411765,2
+'Hamburger SV','FC Schalke 04',25,2011_12,12,Gast,1,3,N,S,15,36,3,64,0.235294,0.352941,0.588235,0.627451,2
+'1899 Hoffenheim','VfB Stuttgart',26,2011_12,12,Heim,1,2,N,S,11,41,6,53,0.294118,0.401961,0.441176,0.519608,1
+'Borussia Dortmund','SV Werder Bremen',26,2011_12,12,Heim,1,0,S,N,1,81,9,42,0.735294,0.794118,0.323529,0.411765,1
+'Bayer 04 Leverkusen','Borussia Monchengladbach',26,2011_12,12,Heim,1,2,N,S,5,54,4,60,0.441176,0.529412,0.5,0.588235,1
+'Hamburger SV','SC Freiburg',26,2011_12,12,Heim,1,3,N,S,15,36,12,40,0.235294,0.352941,0.294118,0.392157,1
+'1. FC Nurnberg','VfL Wolfsburg',26,2011_12,12,Heim,1,3,N,S,10,42,8,44,0.352941,0.411765,0.382353,0.431373,1
+'FC Augsburg','1. FSV Mainz 05',26,2011_12,12,Heim,2,1,S,N,14,38,13,39,0.235294,0.372549,0.264706,0.382353,1
+'Hertha BSC Berlin','FC Bayern Munchen',26,2011_12,12,Heim,0,6,N,S,16,31,2,73,0.205882,0.303922,0.676471,0.715686,1
+'1. FC Kaiserslautern','FC Schalke 04',26,2011_12,12,Heim,1,4,N,S,18,23,3,64,0.117647,0.22549,0.588235,0.627451,1
+'Hannover 96','1. FC Koln',26,2011_12,12,Heim,4,1,S,N,7,48,17,30,0.352941,0.470588,0.235294,0.294118,1
+'VfB Stuttgart','1899 Hoffenheim',26,2011_12,12,Gast,2,1,S,N,6,53,11,41,0.441176,0.519608,0.294118,0.401961,2
+'SV Werder Bremen','Borussia Dortmund',26,2011_12,12,Gast,0,1,N,S,9,42,1,81,0.323529,0.411765,0.735294,0.794118,2
+'Borussia Monchengladbach','Bayer 04 Leverkusen',26,2011_12,12,Gast,2,1,S,N,4,60,5,54,0.5,0.588235,0.441176,0.529412,2
+'SC Freiburg','Hamburger SV',26,2011_12,12,Gast,3,1,S,N,12,40,15,36,0.294118,0.392157,0.235294,0.352941,2
+'VfL Wolfsburg','1. FC Nurnberg',26,2011_12,12,Gast,3,1,S,N,8,44,10,42,0.382353,0.431373,0.352941,0.411765,2
+'1. FSV Mainz 05','FC Augsburg',26,2011_12,12,Gast,1,2,N,S,13,39,14,38,0.264706,0.382353,0.235294,0.372549,2
+'FC Bayern Munchen','Hertha BSC Berlin',26,2011_12,12,Gast,6,0,S,N,2,73,16,31,0.676471,0.715686,0.205882,0.303922,2
+'FC Schalke 04','1. FC Kaiserslautern',26,2011_12,12,Gast,4,1,S,N,3,64,18,23,0.588235,0.627451,0.117647,0.22549,2
+'1. FC Koln','Hannover 96',26,2011_12,12,Gast,1,4,N,S,17,30,7,48,0.235294,0.294118,0.352941,0.470588,2
+'VfL Wolfsburg','Hamburger SV',27,2011_12,12,Heim,2,1,S,N,8,44,15,36,0.382353,0.431373,0.235294,0.352941,1
+'FC Bayern Munchen','Hannover 96',27,2011_12,12,Heim,2,1,S,N,2,73,7,48,0.676471,0.715686,0.352941,0.470588,1
+'SV Werder Bremen','FC Augsburg',27,2011_12,12,Heim,1,1,U,U,9,42,14,38,0.323529,0.411765,0.235294,0.372549,1
+'1. FSV Mainz 05','Hertha BSC Berlin',27,2011_12,12,Heim,1,3,N,S,13,39,16,31,0.264706,0.382353,0.205882,0.303922,1
+'SC Freiburg','1. FC Kaiserslautern',27,2011_12,12,Heim,2,0,S,N,12,40,18,23,0.294118,0.392157,0.117647,0.22549,1
+'Borussia Monchengladbach','1899 Hoffenheim',27,2011_12,12,Heim,1,2,N,S,4,60,11,41,0.5,0.588235,0.294118,0.401961,1
+'FC Schalke 04','Bayer 04 Leverkusen',27,2011_12,12,Heim,2,0,S,N,3,64,5,54,0.588235,0.627451,0.441176,0.529412,1
+'VfB Stuttgart','1. FC Nurnberg',27,2011_12,12,Heim,1,0,S,N,6,53,10,42,0.441176,0.519608,0.352941,0.411765,1
+'1. FC Koln','Borussia Dortmund',27,2011_12,12,Heim,1,6,N,S,17,30,1,81,0.235294,0.294118,0.735294,0.794118,1
+'Hamburger SV','VfL Wolfsburg',27,2011_12,12,Gast,1,2,N,S,15,36,8,44,0.235294,0.352941,0.382353,0.431373,2
+'Hannover 96','FC Bayern Munchen',27,2011_12,12,Gast,1,2,N,S,7,48,2,73,0.352941,0.470588,0.676471,0.715686,2
+'FC Augsburg','SV Werder Bremen',27,2011_12,12,Gast,1,1,U,U,14,38,9,42,0.235294,0.372549,0.323529,0.411765,2
+'Hertha BSC Berlin','1. FSV Mainz 05',27,2011_12,12,Gast,3,1,S,N,16,31,13,39,0.205882,0.303922,0.264706,0.382353,2
+'1. FC Kaiserslautern','SC Freiburg',27,2011_12,12,Gast,0,2,N,S,18,23,12,40,0.117647,0.22549,0.294118,0.392157,2
+'1899 Hoffenheim','Borussia Monchengladbach',27,2011_12,12,Gast,2,1,S,N,11,41,4,60,0.294118,0.401961,0.5,0.588235,2
+'Bayer 04 Leverkusen','FC Schalke 04',27,2011_12,12,Gast,0,2,N,S,5,54,3,64,0.441176,0.529412,0.588235,0.627451,2
+'1. FC Nurnberg','VfB Stuttgart',27,2011_12,12,Gast,0,1,N,S,10,42,6,53,0.352941,0.411765,0.441176,0.519608,2
+'Borussia Dortmund','1. FC Koln',27,2011_12,12,Gast,6,1,S,N,1,81,17,30,0.735294,0.794118,0.235294,0.294118,2
+'Borussia Dortmund','VfB Stuttgart',28,2011_12,12,Heim,4,4,U,U,1,81,6,53,0.735294,0.794118,0.441176,0.519608,1
+'Bayer 04 Leverkusen','SC Freiburg',28,2011_12,12,Heim,0,2,N,S,5,54,12,40,0.441176,0.529412,0.294118,0.392157,1
+'SV Werder Bremen','1. FSV Mainz 05',28,2011_12,12,Heim,0,3,N,S,9,42,13,39,0.323529,0.411765,0.264706,0.382353,1
+'1. FC Nurnberg','FC Bayern Munchen',28,2011_12,12,Heim,0,1,N,S,10,42,2,73,0.352941,0.411765,0.676471,0.715686,1
+'1. FC Kaiserslautern','Hamburger SV',28,2011_12,12,Heim,0,1,N,S,18,23,15,36,0.117647,0.22549,0.235294,0.352941,1
+'FC Augsburg','1. FC Koln',28,2011_12,12,Heim,2,1,S,N,14,38,17,30,0.235294,0.372549,0.235294,0.294118,1
+'Hertha BSC Berlin','VfL Wolfsburg',28,2011_12,12,Heim,1,4,N,S,16,31,8,44,0.205882,0.303922,0.382353,0.431373,1
+'Hannover 96','Borussia Monchengladbach',28,2011_12,12,Heim,2,1,S,N,7,48,4,60,0.352941,0.470588,0.5,0.588235,1
+'1899 Hoffenheim','FC Schalke 04',28,2011_12,12,Heim,1,1,U,U,11,41,3,64,0.294118,0.401961,0.588235,0.627451,1
+'VfB Stuttgart','Borussia Dortmund',28,2011_12,12,Gast,4,4,U,U,6,53,1,81,0.441176,0.519608,0.735294,0.794118,2
+'SC Freiburg','Bayer 04 Leverkusen',28,2011_12,12,Gast,2,0,S,N,12,40,5,54,0.294118,0.392157,0.441176,0.529412,2
+'1. FSV Mainz 05','SV Werder Bremen',28,2011_12,12,Gast,3,0,S,N,13,39,9,42,0.264706,0.382353,0.323529,0.411765,2
+'FC Bayern Munchen','1. FC Nurnberg',28,2011_12,12,Gast,1,0,S,N,2,73,10,42,0.676471,0.715686,0.352941,0.411765,2
+'Hamburger SV','1. FC Kaiserslautern',28,2011_12,12,Gast,1,0,S,N,15,36,18,23,0.235294,0.352941,0.117647,0.22549,2
+'1. FC Koln','FC Augsburg',28,2011_12,12,Gast,1,2,N,S,17,30,14,38,0.235294,0.294118,0.235294,0.372549,2
+'VfL Wolfsburg','Hertha BSC Berlin',28,2011_12,12,Gast,4,1,S,N,8,44,16,31,0.382353,0.431373,0.205882,0.303922,2
+'Borussia Monchengladbach','Hannover 96',28,2011_12,12,Gast,1,2,N,S,4,60,7,48,0.5,0.588235,0.352941,0.470588,2
+'FC Schalke 04','1899 Hoffenheim',28,2011_12,12,Gast,1,1,U,U,3,64,11,41,0.588235,0.627451,0.294118,0.401961,2
+'FC Bayern Munchen','FC Augsburg',29,2011_12,12,Heim,2,1,S,N,2,73,14,38,0.676471,0.715686,0.235294,0.372549,1
+'SC Freiburg','1. FC Nurnberg',29,2011_12,12,Heim,2,2,U,U,12,40,10,42,0.294118,0.392157,0.352941,0.411765,1
+'1. FC Kaiserslautern','1899 Hoffenheim',29,2011_12,12,Heim,1,2,N,S,18,23,11,41,0.117647,0.22549,0.294118,0.401961,1
+'VfB Stuttgart','1. FSV Mainz 05',29,2011_12,12,Heim,4,1,S,N,6,53,13,39,0.441176,0.519608,0.264706,0.382353,1
+'1. FC Koln','SV Werder Bremen',29,2011_12,12,Heim,1,1,U,U,17,30,9,42,0.235294,0.294118,0.323529,0.411765,1
+'VfL Wolfsburg','Borussia Dortmund',29,2011_12,12,Heim,1,3,N,S,8,44,1,81,0.382353,0.431373,0.735294,0.794118,1
+'Borussia Monchengladbach','Hertha BSC Berlin',29,2011_12,12,Heim,0,0,U,U,4,60,16,31,0.5,0.588235,0.205882,0.303922,1
+'FC Schalke 04','Hannover 96',29,2011_12,12,Heim,3,0,S,N,3,64,7,48,0.588235,0.627451,0.352941,0.470588,1
+'Hamburger SV','Bayer 04 Leverkusen',29,2011_12,12,Heim,1,1,U,U,15,36,5,54,0.235294,0.352941,0.441176,0.529412,1
+'FC Augsburg','FC Bayern Munchen',29,2011_12,12,Gast,1,2,N,S,14,38,2,73,0.235294,0.372549,0.676471,0.715686,2
+'1. FC Nurnberg','SC Freiburg',29,2011_12,12,Gast,2,2,U,U,10,42,12,40,0.352941,0.411765,0.294118,0.392157,2
+'1899 Hoffenheim','1. FC Kaiserslautern',29,2011_12,12,Gast,2,1,S,N,11,41,18,23,0.294118,0.401961,0.117647,0.22549,2
+'1. FSV Mainz 05','VfB Stuttgart',29,2011_12,12,Gast,1,4,N,S,13,39,6,53,0.264706,0.382353,0.441176,0.519608,2
+'SV Werder Bremen','1. FC Koln',29,2011_12,12,Gast,1,1,U,U,9,42,17,30,0.323529,0.411765,0.235294,0.294118,2
+'Borussia Dortmund','VfL Wolfsburg',29,2011_12,12,Gast,3,1,S,N,1,81,8,44,0.735294,0.794118,0.382353,0.431373,2
+'Hertha BSC Berlin','Borussia Monchengladbach',29,2011_12,12,Gast,0,0,U,U,16,31,4,60,0.205882,0.303922,0.5,0.588235,2
+'Hannover 96','FC Schalke 04',29,2011_12,12,Gast,0,3,N,S,7,48,3,64,0.352941,0.470588,0.588235,0.627451,2
+'Bayer 04 Leverkusen','Hamburger SV',29,2011_12,12,Gast,1,1,U,U,5,54,15,36,0.441176,0.529412,0.235294,0.352941,2
+'SV Werder Bremen','Borussia Monchengladbach',30,2011_12,12,Heim,2,2,U,U,9,42,4,60,0.323529,0.411765,0.5,0.588235,1
+'1. FSV Mainz 05','1. FC Koln',30,2011_12,12,Heim,4,0,S,N,13,39,17,30,0.264706,0.382353,0.235294,0.294118,1
+'FC Augsburg','VfB Stuttgart',30,2011_12,12,Heim,1,3,N,S,14,38,6,53,0.235294,0.372549,0.441176,0.519608,1
+'Hertha BSC Berlin','SC Freiburg',30,2011_12,12,Heim,1,2,N,S,16,31,12,40,0.205882,0.303922,0.294118,0.392157,1
+'Borussia Dortmund','FC Bayern Munchen',30,2011_12,12,Heim,1,0,S,N,1,81,2,73,0.735294,0.794118,0.676471,0.715686,1
+'Bayer 04 Leverkusen','1. FC Kaiserslautern',30,2011_12,12,Heim,3,1,S,N,5,54,18,23,0.441176,0.529412,0.117647,0.22549,1
+'Hannover 96','VfL Wolfsburg',30,2011_12,12,Heim,2,0,S,N,7,48,8,44,0.352941,0.470588,0.382353,0.431373,1
+'1. FC Nurnberg','FC Schalke 04',30,2011_12,12,Heim,4,1,S,N,10,42,3,64,0.352941,0.411765,0.588235,0.627451,1
+'1899 Hoffenheim','Hamburger SV',30,2011_12,12,Heim,4,0,S,N,11,41,15,36,0.294118,0.401961,0.235294,0.352941,1
+'Borussia Monchengladbach','SV Werder Bremen',30,2011_12,12,Gast,2,2,U,U,4,60,9,42,0.5,0.588235,0.323529,0.411765,2
+'1. FC Koln','1. FSV Mainz 05',30,2011_12,12,Gast,0,4,N,S,17,30,13,39,0.235294,0.294118,0.264706,0.382353,2
+'VfB Stuttgart','FC Augsburg',30,2011_12,12,Gast,3,1,S,N,6,53,14,38,0.441176,0.519608,0.235294,0.372549,2
+'SC Freiburg','Hertha BSC Berlin',30,2011_12,12,Gast,2,1,S,N,12,40,16,31,0.294118,0.392157,0.205882,0.303922,2
+'FC Bayern Munchen','Borussia Dortmund',30,2011_12,12,Gast,0,1,N,S,2,73,1,81,0.676471,0.715686,0.735294,0.794118,2
+'1. FC Kaiserslautern','Bayer 04 Leverkusen',30,2011_12,12,Gast,1,3,N,S,18,23,5,54,0.117647,0.22549,0.441176,0.529412,2
+'VfL Wolfsburg','Hannover 96',30,2011_12,12,Gast,0,2,N,S,8,44,7,48,0.382353,0.431373,0.352941,0.470588,2
+'FC Schalke 04','1. FC Nurnberg',30,2011_12,12,Gast,1,4,N,S,3,64,10,42,0.588235,0.627451,0.352941,0.411765,2
+'Hamburger SV','1899 Hoffenheim',30,2011_12,12,Gast,0,4,N,S,15,36,11,41,0.235294,0.352941,0.294118,0.401961,2
+'VfB Stuttgart','SV Werder Bremen',31,2011_12,12,Heim,4,1,S,N,6,53,9,42,0.441176,0.519608,0.323529,0.411765,1
+'Bayer 04 Leverkusen','Hertha BSC Berlin',31,2011_12,12,Heim,3,3,U,U,5,54,16,31,0.441176,0.529412,0.205882,0.303922,1
+'FC Schalke 04','Borussia Dortmund',31,2011_12,12,Heim,1,2,N,S,3,64,1,81,0.588235,0.627451,0.735294,0.794118,1
+'Hamburger SV','Hannover 96',31,2011_12,12,Heim,1,0,S,N,15,36,7,48,0.235294,0.352941,0.352941,0.470588,1
+'1. FC Kaiserslautern','1. FC Nurnberg',31,2011_12,12,Heim,0,2,N,S,18,23,10,42,0.117647,0.22549,0.352941,0.411765,1
+'VfL Wolfsburg','FC Augsburg',31,2011_12,12,Heim,1,2,N,S,8,44,14,38,0.382353,0.431373,0.235294,0.372549,1
+'FC Bayern Munchen','1. FSV Mainz 05',31,2011_12,12,Heim,0,0,U,U,2,73,13,39,0.676471,0.715686,0.264706,0.382353,1
+'Borussia Monchengladbach','1. FC Koln',31,2011_12,12,Heim,3,0,S,N,4,60,17,30,0.5,0.588235,0.235294,0.294118,1
+'SC Freiburg','1899 Hoffenheim',31,2011_12,12,Heim,0,0,U,U,12,40,11,41,0.294118,0.392157,0.294118,0.401961,1
+'SV Werder Bremen','VfB Stuttgart',31,2011_12,12,Gast,1,4,N,S,9,42,6,53,0.323529,0.411765,0.441176,0.519608,2
+'Hertha BSC Berlin','Bayer 04 Leverkusen',31,2011_12,12,Gast,3,3,U,U,16,31,5,54,0.205882,0.303922,0.441176,0.529412,2
+'Borussia Dortmund','FC Schalke 04',31,2011_12,12,Gast,2,1,S,N,1,81,3,64,0.735294,0.794118,0.588235,0.627451,2
+'Hannover 96','Hamburger SV',31,2011_12,12,Gast,0,1,N,S,7,48,15,36,0.352941,0.470588,0.235294,0.352941,2
+'1. FC Nurnberg','1. FC Kaiserslautern',31,2011_12,12,Gast,2,0,S,N,10,42,18,23,0.352941,0.411765,0.117647,0.22549,2
+'FC Augsburg','VfL Wolfsburg',31,2011_12,12,Gast,2,1,S,N,14,38,8,44,0.235294,0.372549,0.382353,0.431373,2
+'1. FSV Mainz 05','FC Bayern Munchen',31,2011_12,12,Gast,0,0,U,U,13,39,2,73,0.264706,0.382353,0.676471,0.715686,2
+'1. FC Koln','Borussia Monchengladbach',31,2011_12,12,Gast,0,3,N,S,17,30,4,60,0.235294,0.294118,0.5,0.588235,2
+'1899 Hoffenheim','SC Freiburg',31,2011_12,12,Gast,0,0,U,U,11,41,12,40,0.294118,0.401961,0.294118,0.392157,2
+'1. FSV Mainz 05','VfL Wolfsburg',32,2011_12,12,Heim,0,0,U,U,13,39,8,44,0.264706,0.382353,0.382353,0.431373,1
+'SV Werder Bremen','FC Bayern Munchen',32,2011_12,12,Heim,1,2,N,S,9,42,2,73,0.323529,0.411765,0.676471,0.715686,1
+'1. FC Nurnberg','Hamburger SV',32,2011_12,12,Heim,1,1,U,U,10,42,15,36,0.352941,0.411765,0.235294,0.352941,1
+'1899 Hoffenheim','Bayer 04 Leverkusen',32,2011_12,12,Heim,0,1,N,S,11,41,5,54,0.294118,0.401961,0.441176,0.529412,1
+'1. FC Koln','VfB Stuttgart',32,2011_12,12,Heim,1,1,U,U,17,30,6,53,0.235294,0.294118,0.441176,0.519608,1
+'Hertha BSC Berlin','1. FC Kaiserslautern',32,2011_12,12,Heim,1,2,N,S,16,31,18,23,0.205882,0.303922,0.117647,0.22549,1
+'Borussia Dortmund','Borussia Monchengladbach',32,2011_12,12,Heim,2,0,S,N,1,81,4,60,0.735294,0.794118,0.5,0.588235,1
+'FC Augsburg','FC Schalke 04',32,2011_12,12,Heim,1,1,U,U,14,38,3,64,0.235294,0.372549,0.588235,0.627451,1
+'Hannover 96','SC Freiburg',32,2011_12,12,Heim,0,0,U,U,7,48,12,40,0.352941,0.470588,0.294118,0.392157,1
+'VfL Wolfsburg','1. FSV Mainz 05',32,2011_12,12,Gast,0,0,U,U,8,44,13,39,0.382353,0.431373,0.264706,0.382353,2
+'FC Bayern Munchen','SV Werder Bremen',32,2011_12,12,Gast,2,1,S,N,2,73,9,42,0.676471,0.715686,0.323529,0.411765,2
+'Hamburger SV','1. FC Nurnberg',32,2011_12,12,Gast,1,1,U,U,15,36,10,42,0.235294,0.352941,0.352941,0.411765,2
+'Bayer 04 Leverkusen','1899 Hoffenheim',32,2011_12,12,Gast,1,0,S,N,5,54,11,41,0.441176,0.529412,0.294118,0.401961,2
+'VfB Stuttgart','1. FC Koln',32,2011_12,12,Gast,1,1,U,U,6,53,17,30,0.441176,0.519608,0.235294,0.294118,2
+'1. FC Kaiserslautern','Hertha BSC Berlin',32,2011_12,12,Gast,2,1,S,N,18,23,16,31,0.117647,0.22549,0.205882,0.303922,2
+'Borussia Monchengladbach','Borussia Dortmund',32,2011_12,12,Gast,0,2,N,S,4,60,1,81,0.5,0.588235,0.735294,0.794118,2
+'FC Schalke 04','FC Augsburg',32,2011_12,12,Gast,1,1,U,U,3,64,14,38,0.588235,0.627451,0.235294,0.372549,2
+'SC Freiburg','Hannover 96',32,2011_12,12,Gast,0,0,U,U,12,40,7,48,0.294118,0.392157,0.352941,0.470588,2
+'Bayer 04 Leverkusen','Hannover 96',33,2011_12,12,Heim,1,0,S,N,5,54,7,48,0.441176,0.529412,0.352941,0.470588,1
+'FC Bayern Munchen','VfB Stuttgart',33,2011_12,12,Heim,2,0,S,N,2,73,6,53,0.676471,0.715686,0.441176,0.519608,1
+'FC Schalke 04','Hertha BSC Berlin',33,2011_12,12,Heim,4,0,S,N,3,64,16,31,0.588235,0.627451,0.205882,0.303922,1
+'Hamburger SV','1. FSV Mainz 05',33,2011_12,12,Heim,0,0,U,U,15,36,13,39,0.235294,0.352941,0.264706,0.382353,1
+'SC Freiburg','1. FC Koln',33,2011_12,12,Heim,4,1,S,N,12,40,17,30,0.294118,0.392157,0.235294,0.294118,1
+'1. FC Kaiserslautern','Borussia Dortmund',33,2011_12,12,Heim,2,5,N,S,18,23,1,81,0.117647,0.22549,0.735294,0.794118,1
+'1899 Hoffenheim','1. FC Nurnberg',33,2011_12,12,Heim,2,3,N,S,11,41,10,42,0.294118,0.401961,0.352941,0.411765,1
+'VfL Wolfsburg','SV Werder Bremen',33,2011_12,12,Heim,3,1,S,N,8,44,9,42,0.382353,0.431373,0.323529,0.411765,1
+'Borussia Monchengladbach','FC Augsburg',33,2011_12,12,Heim,0,0,U,U,4,60,14,38,0.5,0.588235,0.235294,0.372549,1
+'Hannover 96','Bayer 04 Leverkusen',33,2011_12,12,Gast,0,1,N,S,7,48,5,54,0.352941,0.470588,0.441176,0.529412,2
+'VfB Stuttgart','FC Bayern Munchen',33,2011_12,12,Gast,0,2,N,S,6,53,2,73,0.441176,0.519608,0.676471,0.715686,2
+'Hertha BSC Berlin','FC Schalke 04',33,2011_12,12,Gast,0,4,N,S,16,31,3,64,0.205882,0.303922,0.588235,0.627451,2
+'1. FSV Mainz 05','Hamburger SV',33,2011_12,12,Gast,0,0,U,U,13,39,15,36,0.264706,0.382353,0.235294,0.352941,2
+'1. FC Koln','SC Freiburg',33,2011_12,12,Gast,1,4,N,S,17,30,12,40,0.235294,0.294118,0.294118,0.392157,2
+'Borussia Dortmund','1. FC Kaiserslautern',33,2011_12,12,Gast,5,2,S,N,1,81,18,23,0.735294,0.794118,0.117647,0.22549,2
+'1. FC Nurnberg','1899 Hoffenheim',33,2011_12,12,Gast,3,2,S,N,10,42,11,41,0.352941,0.411765,0.294118,0.401961,2
+'SV Werder Bremen','VfL Wolfsburg',33,2011_12,12,Gast,1,3,N,S,9,42,8,44,0.323529,0.411765,0.382353,0.431373,2
+'FC Augsburg','Borussia Monchengladbach',33,2011_12,12,Gast,0,0,U,U,14,38,4,60,0.235294,0.372549,0.5,0.588235,2
+'Borussia Dortmund','SC Freiburg',34,2011_12,12,Heim,4,0,S,N,1,81,12,40,0.735294,0.794118,0.294118,0.392157,1
+'SV Werder Bremen','FC Schalke 04',34,2011_12,12,Heim,2,3,N,S,9,42,3,64,0.323529,0.411765,0.588235,0.627451,1
+'Hannover 96','1. FC Kaiserslautern',34,2011_12,12,Heim,2,1,S,N,7,48,18,23,0.352941,0.470588,0.117647,0.22549,1
+'1. FSV Mainz 05','Borussia Monchengladbach',34,2011_12,12,Heim,0,3,N,S,13,39,4,60,0.264706,0.382353,0.5,0.588235,1
+'1. FC Nurnberg','Bayer 04 Leverkusen',34,2011_12,12,Heim,1,4,N,S,10,42,5,54,0.352941,0.411765,0.441176,0.529412,1
+'VfB Stuttgart','VfL Wolfsburg',34,2011_12,12,Heim,3,2,S,N,6,53,8,44,0.441176,0.519608,0.382353,0.431373,1
+'1. FC Koln','FC Bayern Munchen',34,2011_12,12,Heim,1,4,N,S,17,30,2,73,0.235294,0.294118,0.676471,0.715686,1
+'FC Augsburg','Hamburger SV',34,2011_12,12,Heim,1,0,S,N,14,38,15,36,0.235294,0.372549,0.235294,0.352941,1
+'Hertha BSC Berlin','1899 Hoffenheim',34,2011_12,12,Heim,3,1,S,N,16,31,11,41,0.205882,0.303922,0.294118,0.401961,1
+'SC Freiburg','Borussia Dortmund',34,2011_12,12,Gast,0,4,N,S,12,40,1,81,0.294118,0.392157,0.735294,0.794118,2
+'FC Schalke 04','SV Werder Bremen',34,2011_12,12,Gast,3,2,S,N,3,64,9,42,0.588235,0.627451,0.323529,0.411765,2
+'1. FC Kaiserslautern','Hannover 96',34,2011_12,12,Gast,1,2,N,S,18,23,7,48,0.117647,0.22549,0.352941,0.470588,2
+'Borussia Monchengladbach','1. FSV Mainz 05',34,2011_12,12,Gast,3,0,S,N,4,60,13,39,0.5,0.588235,0.264706,0.382353,2
+'Bayer 04 Leverkusen','1. FC Nurnberg',34,2011_12,12,Gast,4,1,S,N,5,54,10,42,0.441176,0.529412,0.352941,0.411765,2
+'VfL Wolfsburg','VfB Stuttgart',34,2011_12,12,Gast,2,3,N,S,8,44,6,53,0.382353,0.431373,0.441176,0.519608,2
+'FC Bayern Munchen','1. FC Koln',34,2011_12,12,Gast,4,1,S,N,2,73,17,30,0.676471,0.715686,0.235294,0.294118,2
+'Hamburger SV','FC Augsburg',34,2011_12,12,Gast,0,1,N,S,15,36,14,38,0.235294,0.352941,0.235294,0.372549,2
+'1899 Hoffenheim','Hertha BSC Berlin',34,2011_12,12,Gast,1,3,N,S,11,41,16,31,0.294118,0.401961,0.205882,0.303922,2

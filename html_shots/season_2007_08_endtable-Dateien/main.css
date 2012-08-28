@@ -1,0 +1,241 @@
+
+body {
+margin: 0 auto;
+padding: 4px 0px 0px 0px;
+font: 1em Verdana,Tahoma,Arial,sans-serif;
+background: #444444;
+}
+
+#wrap {
+background: #EEEEEE;
+color: #000000;
+margin: 0 auto;
+width: 970px;
+  border-left: 1px #CE2031 solid;
+  border-right: 1px #CE2031 solid;
+}
+
+#kopf {
+background-image: url(../i/logo3.jpg);
+background-repeat:repeat-x;
+clear: both;
+margin: 0px 0em 0px 0em;
+padding: 0;
+height: 58px;
+background-color: #CE2031;
+}
+
+#links {
+clear: left;
+float: left;
+width: 160px;
+margin: 0 0 10px 0;
+padding: 0;
+font-size: 0.8em;
+border: solid 0px #CE2031;
+}
+
+#menue_h {
+border-top: solid 1px #CE2031;
+border-bottom: solid 1px #CE2031;
+margin: 0px 0em 4px 0em;
+padding: 4px 166px 4px 166px;
+font-size: 0.6em;
+}
+
+#rechts {
+float: right;
+width: 160px;
+margin: 0 0 10px 0;
+padding: 0;
+font-size: 0.8em;
+border-top: 1px solid #CE2031;
+border-bottom: 1px solid #CE2031;
+border-left: 1px solid #CE2031;
+}
+
+#inhalt {
+background-color: #FFFFFF;
+margin: 0em 166px 4px 166px;
+padding: 10px;
+text-align: left;
+border: solid 1px #CE2031;
+}
+
+#fuss {
+clear: both;
+margin: 0px 0px 0px 0px;
+padding: 0px 0em 0px 0em;
+text-align: center;
+color: #DDDDDD;
+font-size: 0.8em;
+height: 20px;
+background: #CE2031;
+}
+
+/* --------------- KOPF Elemente ---------------- */
+
+.logoText {
+width: 350px;
+margin: 0px 0px 0px 4px;
+float: left;
+color: #FFFFFF;
+font-size: 2.4em;
+font-weight: bold;
+border: solid 0px #009900;
+}
+
+.logoUntertext {
+width: 400px;
+float: right;
+text-align: right;
+color: #DDDDDD;
+margin-right: 4px;
+font-size: 0.8em;
+border: solid 0px #009900;
+}
+
+/* --------------- MENÜ Elemente ---------------- */
+
+/* 
+
+*/
+
+.announceL {
+margin: 10px 0 10px 0;
+padding: 10px;
+width: 140px;
+color:#666666;
+background-color: #dddddd;
+line-height: 1.3em;
+  border-top: 1px #CE2031 solid;
+  border-bottom: 1px #CE2031 solid;
+  border-right: 1px #CE2031 solid;
+}
+
+.announceR {
+margin: 10px 0 10px 0;
+padding: 10px;
+width: 140px;
+color:#666666;
+background-color: #dddddd;
+line-height: 1.3em;
+  border-top: 1px #CE2031 solid;
+  border-bottom: 1px #CE2031 solid;
+/*  border-left: 1px #CE2031 solid;*/
+
+}
+
+
+.rubrik {
+  font-weight: bold;
+margin: 0px 0 2px 0;
+padding: 1px 10px 1px 10px;
+  height: 22px;
+width: 140px;
+color:#EEEEEE;
+background-color: #CE2031;
+background-image: url(../i/link_button4.jpg);
+background-repeat:repeat-x;
+  border-top: 1px #CE2031 solid;
+  border-bottom: 1px #CE2031 solid;
+  border-right: 1px #CE2031 solid;
+}
+
+
+.rubrik .schrift {
+border: 0px solid #ffffff;
+vertical-align:top;
+}
+.menue_ende {width:100%; height:1px; border-top: solid 1px #CE2031; margin-top:-4px; font-size:0px; z-index:1000;margin-bottom: 4px;}
+/* --------------- RECHTS Elemente ---------------- */
+
+#rechts p {margin: 0 0 1.5em 0;}
+
+
+/* --------------- INHALT Elemente ---------------- */
+
+
+#inhalt {
+font-size:0.8em;
+}
+
+#inhalt img {
+padding: 0px;
+display:inline;
+border: 0px;
+}
+
+
+.Infocontainer {
+margin: 10px 0 10px 0;
+padding: 10px;
+width: 240px;
+color:#666666;
+background-color: #dddddd;
+line-height: 1.3em;
+  border: 1px #CE2031 solid;
+}
+
+/* --------------- ALLGE Elemente ---------------- */
+
+h1 {font-size: 2.0em; margin: 0 0 10px 0;}
+h2 {font-size: 1.75em; margin: 0 0 10px 0;}
+h3 {font-size: 1.625em; margin: 0 0 10px 0;}
+h4 {font-size: 1.25em; margin: 0 0 10px 0;}
+
+
+
+.left {
+margin: 0px 7px 0px 5px;
+float: left;
+}
+
+.right {
+margin: 0px 7px 0px 5px;
+float: right;
+}
+
+.textright {text-align: right;}
+.center {text-align: center;}
+.small {font-size: 0.8em;}
+.bold {font-weight: bold;}
+.hide {display: none;}
+
+/* ----- ------*/
+a { color:#CE2031; text-decoration: none }
+a:hover { color:#111111; text-decoration: none }
+
+th { text-align:left; background-color:#DDDDDD; font-size:8pt}
+td { font-size:8pt; color:#555555;} /* ----- background-color:#FFFFFF;  ------*/
+hr {color:#dddddd}
+.trenner {height:1px; border-top: solid 1px #CE2031; margin-bottom:2px; font-size:0px; z-index:1000;}
+#graphik1 { width:600px; border:dashed #CE2031 1px; margin-bottom:10px; background-color:#F3F3F3; padding:4px; }
+
+
+/* ----- ------*/
+select { font-family:Verdana; font-size:8pt; margin:0; }
+
+hr {color:#dddddd}
+#details { width:608px; height:140px; overflow:auto; border:dashed #CE2031 1px; margin-bottom:10px }
+#wm { color:#000000 }
+
+.tab {width:600px; border:dashed #CE2031 1px; margin-bottom:10px; background-color:#F3F3F3; padding:4px}
+.tab2 {width:600px; border:dashed #CE2031 1px; margin-bottom:10px; background-color:#F3F3F3; padding:4px; overflow:auto}
+.tab td {background-color:#FFFFFF;}
+.bulired { color:#CE2031; }
+
+.zitat {font: italic bold 10pt Verdana; background-color:#EEEEEE; border: solid 1px #000000; padding:4px}
+.spruch {font: italic 10pt Verdana; background-color:#EEEEEE; border: solid 1px #000000; padding:4px}
+
+.gross1 {font:bold 14px Verdana; text-decoration:underline; margin-bottom: 8px}
+
+.ue1 {font:bold 12px Verdana; text-decoration:underline; margin-bottom: 8px}
+
+iframe.stadion {width:590px; height:400px; border:0px; padding:0px; margin:0px}
+
+.fussnote {color: #666666; font-size: 0.8em;}
+
+.S {width:24px; background-image:URL(../i/siege.jpg);background-repeat:repeat-x; border:solid 1px black}
+.U {width:24px; background-image:URL(../i/unentschieden.jpg);background-repeat:repeat-x; border:solid 1px black}
+.N {width:24px; background-image:URL(../i/niederlagen.jpg);background-repeat:repeat-x; border:solid 1px black}

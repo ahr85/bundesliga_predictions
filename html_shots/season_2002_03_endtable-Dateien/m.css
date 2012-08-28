@@ -1,0 +1,139 @@
+@charset "utf-8";
+#links ul {	
+  list-style: none;
+  width: 160px;
+  margin: 0 0 4px 0;
+  padding: 0;
+  font-size: 0.85em;
+}	
+
+#links li {
+  margin-bottom: 4px;
+}
+
+#links li a {
+
+  height: 18px;
+  text-decoration: none;
+  display: block;
+  padding: 4px 0 0 18px;
+  background: #FFFFFF;
+  border-top: 1px #CE2031 solid;
+  border-right: 1px #CE2031 solid;
+}
+	
+#links li a:hover {
+/* background: #CE2031;
+
+ */
+  background-repeat:no-repeat;
+  background-image: url(../i/bg_fussball_klein.jpg);
+  color: #222222;
+  border-left: 0px #47381e solid;
+  border-top: 1px #666666 solid;
+  border-right: 1px #666666 solid;
+  cursor:pointer;
+}
+/* ---- ---- */
+
+#rechts ul {	
+  list-style: none;
+  width: 160px;
+  margin: 0 0 4px 0;
+  padding: 0;
+  font-size: 0.85em;
+}	
+
+#rechts li {
+  margin-bottom: 4px;
+}
+
+#rechts li a {
+
+  height: 18px;
+  text-decoration: none;
+  display: block;
+  padding: 4px 0 0 18px;
+  background: #FFFFFF;
+  border-top: 1px #CE2031 solid;
+  border-right: 1px #CE2031 solid;
+}
+	
+#rechts li a:hover {
+  background-image: url(../i/bg_fussball_klein.jpg);
+  background-repeat:no-repeat;
+  color: #222222;
+  border-left: 0px #47381e solid;
+}
+
+#rechts li a.aktiveSeite {
+
+  background-image: url(../i/bg_fussball_klein.jpg);
+  background-repeat:no-repeat;
+
+  border-top: 1px #000000 solid;
+  border-right: 2px #000000 solid;
+
+}
+/* ---- ---- */
+
+#links li a.aktiveSeite {
+
+
+background: #FFFFFF;
+color: #000000;
+background-image: url(../i/bg_fussball_klein.jpg);
+background-repeat:no-repeat;
+border-left: 0px #47381e solid;
+  border-top: 1px #000000 solid;
+  border-right: 2px #000000 solid;
+  
+  text-decoration: none;
+  display: block;
+  padding: 4px 0 0 18px;
+}
+
+
+/* -- Unter-Navi -- */
+
+a.mon{
+color: #FFFFFF;
+}
+
+a.moff{
+color: #000000;
+}
+
+a.mon:hover{
+color: #000000;
+}
+
+td.mon, td.moff{
+background: url(../i/reiter2a.jpg) no-repeat;
+/* 
+font-size: 12px;
+font-weight:bold;
+ */
+width:122px;
+height:25px;
+text-align:center;
+}
+
+td.moff {
+background: url(../i/reiter1b.jpg) no-repeat;
+color: #000000;
+font-weight:bold;
+}
+
+.seite {
+padding: 4px;
+border: solid 1px #CE2031;
+}
+
+div.seite {
+width: 18px;
+padding: 4px;
+border: solid 1px #CE2031;
+float: left;
+margin: 2px;
+}
