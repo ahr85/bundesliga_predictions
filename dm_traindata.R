@@ -1,4 +1,3 @@
-#library(plyr)
 library(sqldf)
 
 load("data/alle_spiele.RData")

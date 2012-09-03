@@ -1,30 +1,32 @@
 library(e1071)
-library(rpart)
-#library(FSelector)
 library(ggplot2)
+library(MASS)
+library(sqldf)
+
 
 load("data/traindata.RData")
 
-# cm <- function (actual, predicted) {
-#    # Produce a confusion matrix
-#    
-#    t<-table(predicted,actual)
-#    # there is a potential bug in here if columns are tied for ordering
-#    t[apply(t,2,function(c) order(-c)[1]),] 
-# }
-
-
-# Heim und Gast in 0 und 1 umwandeln
+# home and guest into 0 and 1
 traindata$hg_01 <- as.numeric(traindata$heim_gast)
+
+# Teamname into a number
+all_team <- factor(unique(c(as.character(traindata$team_a))))
+all_team_num <- as.numeric(all_team)
+
+all_team_df <- data.frame(cbind(as.character(all_team), all_team_num))
+names(all_team_df) <- c("team", "team_nr")
+
+traindata <- merge(traindata, all_team_df, by.x = "team_b", by.y = "team")
+colnames(traindata)[26] <- "team_b_nr"
+
+traindata <- merge(traindata, all_team_df, by.x = "team_a", by.y = "team")
+colnames(traindata)[27] <- "team_a_nr"
+
+
+## split data
 
 train <- traindata[traindata$saison != "2011_12",]
 testdata <- traindata[traindata$saison == "2011_12",]
-#testdata <- traindata[traindata$saison == "2011_12" & traindata$heim_gast == "Heim",]
-
-
-#test <- knn(train[,c(3,5,11:15)], testdata[,c(3,5,11:15)], train[,9], k = 1)
-
-
 
 ## set folling variables to 0/1 etc in the testdata as ist must be calculated first
 # 0 points before the first game
@@ -119,9 +121,6 @@ for (i in 2:34) {
    testdata$points_temp_a[testdata$spieltag ==i] <- tempdata$points_temp_a
    testdata$points_temp_b[testdata$spieltag ==i] <- tempdata$points_temp_b
 
-   #testdata$wins_temp_a[testdata$spieltag ==i] <- tempdata$wins_temp_a
-   #testdata$wins_temp_b[testdata$spieltag ==i] <- tempdata$wins_temp_b
-   
    testdata$wins_pro_a[testdata$spieltag == i] <- tempdata$wins_a / i
    testdata$wins_pro_b[testdata$spieltag == i] <- tempdata$wins_b / i
    
@@ -147,93 +146,129 @@ for (i in 2:34) {
 # we do only need half of the games
 testdata <- testdata[testdata$heim_gast == "Heim",]
 
-###############
-### ReliefF ###
-
-#select_sun <- relief(sun_a ~ team_a + team_b + tore_a + tore_b + spieltag + saison_weight + place_a + place_b + points_a + points_b + hg_01 + wins_pro_a + wins_pro_b + points_pro_a + points_pro_b + wins_a + tied_a + loses_a + wins_b + tied_b + loses_b, data = traindata, neighbours.count= 5, sample.size = 50)
-#select_tore_a <- relief(tore_a ~ team_a + team_b + spieltag + saison_weight + place_a + place_b + points_a + points_b + hg_01 + wins_a + tied_a + loses_a + wins_b + tied_b + loses_b + wins_pro_a + wins_pro_b + points_pro_a + points_pro_b, data = traindata, neighbours.count= 5, sample.size = 50)
-#select_tore_b <- relief(tore_b ~ team_a + team_b + spieltag + saison_weight + place_a + place_b + points_a + points_b + hg_01 + wins_a + tied_a + loses_a + wins_b + tied_b + loses_b + wins_pro_a + wins_pro_b + points_pro_a + points_pro_b, data = traindata, neighbours.count= 5, sample.size = 50)
-
-#subset_sun <- cutoff.k.percent(select_sun, 1)
-#formula_sun <- as.simple.formula(subset_sun, "sun_a")
-# Formula: sun_a ~ team_a + place_a + tied_a + loses_a + hg_01 + loses_b + points_pro_a + points_a + wins_pro_a + wins_a
 
 ###########
 ### SVM ###
+### 49% ###
 
-#tuned <- tune.svm(sun_a ~ spieltag + saison_weight + place_a + place_b + hg_01 + wins_pro_a + wins_pro_b + points_pro_a + points_pro_b, data = train, gamma = 10^(-6:-1), cost = 10^(1:2))
+svm_sun <- svm(sun_a ~ team_a_nr + team_b_nr + spieltag + saison_weight + place_a + place_b + points_a + points_b + hg_01 + wins_pro_a + wins_pro_b + points_pro_a + points_pro_b + wins_a + tied_a + loses_a + wins_b + tied_b + loses_b, data = train, probability = TRUE)
 
-svm_sun <- svm(sun_a ~ team_a + team_b + spieltag + saison_weight + place_a + place_b + points_a + points_b + hg_01 + wins_pro_a + wins_pro_b + points_pro_a + points_pro_b + wins_a + tied_a + loses_a + wins_b + tied_b + loses_b, data = train, probability = TRUE)
-#svm_sun <- svm(formula_sun, data = train)
-#svm_tore_a <- svm(as.factor(tore_a) ~ team_a + team_b + spieltag + saison_weight + place_a + place_b + points_a + points_b + hg_01 + wins_pro_a + wins_pro_b + points_pro_a + points_pro_b + wins_a + tied_a + loses_a + wins_b + tied_b + loses_b, data = train, probability = TRUE)
-#svm_tore_b <- svm(tore_b ~ team_a + team_b + spieltag + saison_weight + place_a + place_b + points_a + points_b + hg_01 + wins_pro_a + wins_pro_b + points_pro_a + points_pro_b + wins_a + tied_a + loses_a + wins_b + tied_b + loses_b, data = train)
-#svm_all <- svm(sun_a ~ spieltag + saison_weight + hg_01, data = train, cost = 100, gamma = 1)
-
-predict_sun <- predict(svm_sun, testdata)
-tab_sun <- table(pred = predict_sun, true = testdata$sun_a)
-tab_sun
-# 99!!! Prozent richtig, aber keine Unentschieden getippt
-
-#predict_tore_a <- predict(svm_tore_a, testdata)
-#tab_tore_a <- table(pred = predict_tore_a, true = testdata$tore_a)
-#tab_tore_a
-#cor(predict_tore_a, testdata$tore_a)
-
-testdata <- cbind(testdata, predict_sun)
-testdata$right <- 0
-
-for (i in 1:nrow(testdata)) {
-   if (testdata$sun_a[i] == testdata$predict_sun[i]) {
-      testdata$right[i] <- 1
-   }
-}
- 
-ddply(.data=testdata, .(spieltag), mean)[,29]
-
-testdata$mean <- testdata
-
-plot_svm <- ggplot(testdata, aes(x = spieltag, y =right)) +  geom_line(aes(group = team_a))
-plot_svm
-
-
+predict_svm_sun <- predict(svm_sun, testdata)
+tab_svm_sun <- table(pred = predict_svm_sun, true = testdata$sun_a)
+tab_svm_sun
 
 
 ###################
 ### Naive Bayes ###
+### 42 %!       ###
 
-nb_all <- naiveBayes(sun_a ~ team_a + team_b + spieltag + saison_weight + place_a + place_b + hg_01 + wins_pro_a + wins_pro_b + points_pro_a + points_pro_b, data = train)
+nb_sun <- naiveBayes(sun_a ~ team_a_nr + team_b_nr + spieltag + saison_weight + place_a + place_b + points_a + points_b + hg_01 + wins_pro_a + wins_pro_b + points_pro_a + points_pro_b + wins_a + tied_a + loses_a + wins_b + tied_b + loses_b, data = train)
 
-predict_nb_all <- predict(nb_all, testdata[,c(1,2,3,5,10,12,19,14,16,13,15)])
+testdata_2 <- testdata[,c(26,27,3,5,17,19,18,20,25,21,23,22,24,11,12,13,14,15,16)]
 
-tab_nb <- table(pred = predict_nb_all, true = testdata$sun_a)
-# etwa 30 Prozent richtig!
-
-
-######################
-### Decision trees ###
-
-dt_all <- rpart(sun_a ~ team_a + team_b + spieltag + saison_weight + place_a + place_b + hg_01 + wins_pro_a + wins_pro_b + points_pro_a + points_pro_b, data = train)
-
-?predict
-
-cm(testdata$sun_a, predict_all)
-
-1 - sum(diag(m)) / sum(m)
-
-predict(s, testdata)
-traceback()
-?predict.svm
-## Werder gegen HSV
-
-train_2 <- traindata[traindata$team_a == "SV Werder Bremen" & traindata$team_b == "Hamburger SV" & traindata$saison != "2011_12",]
-testdata_2 <- traindata[traindata$team_a == "SV Werder Bremen" & traindata$team_b == "Borussia Dortmund" & traindata$saison == "2011_12",]
-
-test_2 <- knn(train_2[,c(3,5,11:15)], testdata_2[,c(3,5,11:15)], train_2[,9], k = 1)
-
-table(test_2, testdata_2$sun_a)
+predict_nb_sun <- predict(nb_sun, testdata_2)
+tab_nb_sun <- table(pred = predict_nb_sun, true = testdata$sun_a)
+tab_nb_sun
 
 
-#s_2 <- svm(sun_a ~ spieltag + saison_weight + as.numeric(place_a) + as.numeric(points_a) + as.numeric(place_b) + as.numeric(points_b) + hg_01, data = train_2, cost = 100, gama = 1)
-s_2 <- svm(sun_a ~ spieltag + saison_weight + as.numeric(place_a) +  as.numeric(place_b) + hg_01, data = train_2, cost = 100, gama = 1)
-test_2 <- predict(s, testdata_2)
-table(test_2, testdata_2$sun_a)
+###########
+### knn ###
+### 29% ###
+
+testdata_2 <- testdata[,c(26,27,3,5,17,19,18,20,25,21,23,22,24,11,12,13,14,15,16)]
+traindata_2 <- traindata[,c(26,27,3,5,17,19,18,20,25,21,23,22,24,11,12,13,14,15,16)]
+
+knn_sun <- knn(traindata_2, testdata_2, traindata[,9], k =2)
+predict_knn_sun <- knn_sun
+tab_knn_sun <- table(pred = predict_knn_sun, true = testdata$sun_a)
+tab_knn_sun
+
+
+###########################################
+### Plotting Barplot all the algorithms ###
+
+true <- c("S", "U", "N")
+
+tables <- c("tab_svm_sun", "tab_nb_sun", "tab_knn_sun")
+
+for (i in tables) {
+
+   for (ii in 1:ncol(get(i))) {
+      
+      temp <- get(i)[,ii]
+      temp_names <- names(temp)
+      
+      temp_data <- data.frame(cbind(temp, temp_names, i, true[ii]))
+      
+      if (ii == 1) {
+         temp_data_2 <- temp_data
+      } else {
+         temp_data_2 <- rbind(temp_data_2, temp_data)
+      }
+      
+   }
+
+   if (i == tables[1]) {
+      plot_data <- temp_data_2
+   } else {
+      plot_data <- rbind(plot_data, temp_data_2)
+   }
+}
+
+names(plot_data) <- c("count", "predicted", "algorithm", "real")
+
+plot_data$right <- "right"
+
+for (i in 1:nrow(plot_data)) {
+   if (as.character(plot_data$predicted[i]) != as.character(plot_data$real[i])) { plot_data$right[i] <- "false" }
+}
+
+levels(plot_data$algorithm)[levels(plot_data$algorithm) == "tab_svm_sun"] <- "SVM"
+levels(plot_data$algorithm)[levels(plot_data$algorithm) == "tab_nb_sun"] <- "Naive bayes"
+levels(plot_data$algorithm)[levels(plot_data$algorithm) == "tab_knn_sun"] <- "knn"
+
+plot_data$count <- as.numeric(levels(plot_data$count))[plot_data$count]
+
+
+plot <- ggplot(plot_data, aes(x = real, group = right, fill = right)) + geom_bar(aes(y = count), stat = "identity", position = "dodge")
+plot <- plot + facet_wrap(~ algorithm) + scale_fill_brewer("Predictions",type = "qual", palette= "Set1", breaks=c("right", "false"))
+plot <- plot + scale_x_discrete(labels = c("Wins", "Ties", "Loses"))
+plot <- plot + opts(axis.title.x = theme_blank(), axis.text.x = theme_text(size = 11, angle = 90))
+plot
+
+png(file= "plots/tests/compare_svm_nb_knn_bar.png", width = 500, height = 250)
+   plot
+dev.off()
+
+
+#########################################
+### Plotting lines over all matchdays ###
+
+spieltag <- sort(rep(1:34, 9))
+
+temp_1 <- cbind(spieltag, predict_svm_sun, testdata$sun_a, "SVM")
+temp_2 <- cbind(spieltag, predict_nb_sun, testdata$sun_a, "nb")
+temp_3 <- cbind(spieltag, predict_knn_sun, testdata$sun_a, "knn")
+plot_data_2 <- data.frame(rbind(temp_1, temp_2, temp_3))
+
+plot_data_2$right <- 0
+
+for (i in 1:nrow(plot_data_2)) {
+   if(plot_data_2$predict_svm_sun[i] == plot_data_2$V3[i]) { plot_data_2$right[i] <- 1 }
+}
+
+names(plot_data_2) <- c("spieltag", "predict", "real", "algorithmus",  "right")
+
+plot_data_2 <- sqldf("select spieltag as matchday, algorithmus as algorithm, avg(right) as mean_right from plot_data_2
+                     group by spieltag, algorithmus;")
+
+plot_data_2$matchday <- as.integer(plot_data_2$matchday)
+
+
+plot_2 <- ggplot(plot_data_2, aes(x = matchday, y = mean_right, group = algorithm, colour = algorithm)) + geom_line(size = .75, alpha = 0.5)
+plot_2 <- plot_2 + scale_color_brewer(type = "qual", palette = "Set1") + geom_smooth(method = loess, se = F, size = 1.25)
+plot_2
+
+png(file = "plots/tests/compare_svm_nb_knn_time.png", width = 500, height = 250)
+   plot_2
+dev.off()
