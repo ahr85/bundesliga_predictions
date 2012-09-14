@@ -1,0 +1,22 @@
+body { font-family:Verdana; font-size:0.8em; margin:0px; }
+#body2 { border: solid 1px #CE2031; width:620px; text-align:left; padding:9px; margin-bottom:5px  }
+#kopf { border: solid 1px #CE2031; width:620px; padding:2px; margin-bottom:5px }
+
+
+select { font-family:Verdana; font-size:8pt; margin:0; }
+a { color:#CE2031; text-decoration: none }
+th { text-align:left; background-color:#DDDDDD; font-size:8pt}
+td { text-align:left; background-color:#FFFFFF; font-size:8pt; color:#666666;}
+hr {color:#dddddd}
+#details { width:600px; height:140px; overflow:auto; border:dashed #CE2031 1px; margin-bottom:10px }
+#wm { color:#000000 }
+#graphik1 { width:600px; border:dashed #CE2031 1px; margin-bottom:10px; background-color:#F3F3F3; padding:4px; }
+
+.tab {width:600px; border:dashed #CE2031 1px; margin-bottom:10px; background-color:#F3F3F3; padding:4px}
+.trenner {width:100%; height:1px; border-top: solid 1px #CE2031; margin-bottom:2px; font-size:0px; z-index:1000;}
+.bulired { color:#CE2031; }
+
+.zitat {font: italic bold 10pt Verdana; background-color:#EEEEEE; border: solid 1px #000000; padding:4px}
+.spruch {font: italic 10pt Verdana; background-color:#EEEEEE; border: solid 1px #000000; padding:4px}
+
+.gross1 {font:bold 14px Verdana; text-decoration:underline; margin-bottom: 8px}
